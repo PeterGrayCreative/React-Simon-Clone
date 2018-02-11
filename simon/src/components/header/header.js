@@ -9,7 +9,7 @@ class Header extends Component {
   render() {
     return (
       <StyledDiv>
-        <h3>Header</h3>
+        <h1>Simon 2.0.1</h1>
       </StyledDiv>
     );
   }

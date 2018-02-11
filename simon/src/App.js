@@ -9,6 +9,7 @@ const StyledDiv = styled.div`
   max-width: 1100px;
   min-width: 600px;
   height: 600px;
+  margin: 0 auto;
   background-color: #aaafba;
   box-sizing: border-box;
   user-select: none;
@@ -20,7 +21,6 @@ class App extends Component {
   render() {
     return (
       <StyledDiv>
-        <h1>Simon Clone</h1>
         <Header />
         <GameBoard />
         <Status />
