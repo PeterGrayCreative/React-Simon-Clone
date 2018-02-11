@@ -8,8 +8,9 @@ import Footer from './components/footer/footer'
 const StyledDiv = styled.div`
   max-width: 1100px;
   min-width: 600px;
-  height: 600px;
-  margin: 0 auto;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 15px;
   background-color: #aaafba;
   box-sizing: border-box;
   user-select: none;

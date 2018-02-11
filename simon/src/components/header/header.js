@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-
+  h1 {
+    font-size: 50px;
+  }
 `;
 
 class Header extends Component {
