@@ -14,7 +14,7 @@ h2 {
 }
 
 span {
-	color: #f24e02;
+  color: #f24e02;
 }
 
 .status-board__buttons {
@@ -22,9 +22,9 @@ span {
 }
 
 button {
-	width: 75px;
-	margin: 0 10px 20px;
-	padding: 10px 0;
+  width: 75px;
+  margin: 0 10px 20px;
+  padding: 10px 0;
   border-radius: 10px;
   font-family: Roboto, sans-serif;
   font-weight: 600;
