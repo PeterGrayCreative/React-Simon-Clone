@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
+  letter-spacing: 1px;
+
   p {
     color: #000000 ;
-    width: 450px;
+    width: 500px;
     margin: 10px auto;
-    line-height: 115%
+    line-height: 125%
   }
 
   a {

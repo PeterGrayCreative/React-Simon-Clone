@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   margin-top: 15px;
+  letter-spacing: 1px;
 
 h1 {
   margin-bottom: 10px;
