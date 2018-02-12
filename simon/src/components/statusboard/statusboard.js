@@ -17,7 +17,7 @@ span {
 	color: #f24e02;
 }
 
-.buttons {
+.status-board__buttons {
   margin-top: 15px;
 }
 
@@ -25,7 +25,8 @@ button {
 	width: 75px;
 	margin: 0 10px 20px;
 	padding: 10px 0;
-	border-radius: 10px;
+  border-radius: 10px;
+  font-family: Roboto, sans-serif;
   font-weight: 600;
   &:hover {
     cursor: pointer;
@@ -36,24 +37,24 @@ button {
 }
 `;
 
-class Status extends Component {
+class StatusBoard extends Component {
   render() {
     return (
       <StyledDiv>
         <h1>Ready To Play!</h1>
-        <h2>Round: <span id='roundNumber'>1</span>&nbsp;&nbsp;</h2>
-        <h2>Speed: <span id='speedStatus'>Slow</span>&nbsp;&nbsp;</h2>
-        <h2>Strict Mode: <span id='strictStatus'>Off</span>&nbsp;&nbsp;</h2>
+        <h2>Round: <span>1</span>&nbsp;&nbsp;</h2>
+        <h2>Speed: <span>Slow</span>&nbsp;&nbsp;</h2>
+        <h2>Strict Mode: <span>Off</span>&nbsp;&nbsp;</h2>
 
-        <div className='buttons'>
-          <button id='start'>START</button>
-          <button id='speed'>SPEED</button>
-          <button id='strict'>STRICT</button>
-          <button id='reset'>RESET</button>
+        <div className='status-board__buttons'>
+          <button>START</button>
+          <button>SPEED</button>
+          <button>STRICT</button>
+          <button>RESET</button>
         </div>
       </StyledDiv>
     );
   }
 }
 
-export default Status;
+export default StatusBoard;

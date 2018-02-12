@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Header from './components/header/header';
 import GameBoard from './components/gameboard/gameboard';
-import Status from './components/status/status';
+import StatusBoard from './components/statusboard/statusboard';
 import Footer from './components/footer/footer'
 
 const StyledDiv = styled.div`
@@ -24,7 +24,7 @@ class App extends Component {
       <StyledDiv>
         <Header />
         <GameBoard />
-        <Status />
+        <StatusBoard />
         <Footer />
       </StyledDiv>
     );

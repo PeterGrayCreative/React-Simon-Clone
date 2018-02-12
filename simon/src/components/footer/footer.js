@@ -10,6 +10,7 @@ const StyledDiv = styled.div`
 
   a {
     text-decoration: none;
+    color: 
   }
 `;
 
