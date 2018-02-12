@@ -14,7 +14,7 @@ const StyledDiv = styled.div`
   background-color: #aaafba;
   box-sizing: border-box;
   user-select: none;
-  border-radius: 3px;
+  border-radius: 4px;
   text-align: center;
   font-family: Orbitron, sans-serif;
   color: #25292e;

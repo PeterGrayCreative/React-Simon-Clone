@@ -7,6 +7,7 @@ const StyledDiv = styled.div`
   margin: 20px auto;
   background-color: #2a2a2a;
   border-radius: 100%;
+  box-shadow: 3px 3px 5px #2a2a2a, inset -2px -2px 2px #696969, inset 2px 2px 2px #696969;
 
   .button {
     display: inline-block;
