@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Header from './components/header/header';
 import GameBoard from './components/gameboard/gameboard';
 import StatusBoard from './components/statusboard/statusboard';
-import Footer from './components/footer/footer'
+import Footer from './components/footer/footer';
 
 const StyledDiv = styled.div`
   max-width: 1100px;
@@ -14,8 +14,10 @@ const StyledDiv = styled.div`
   background-color: #aaafba;
   box-sizing: border-box;
   user-select: none;
+  border-radius: 3px;
   text-align: center;
-  font-family: Roboto, sans-serif;
+  font-family: Orbitron, sans-serif;
+  color: #25292e;
 `;
 
 class App extends Component {

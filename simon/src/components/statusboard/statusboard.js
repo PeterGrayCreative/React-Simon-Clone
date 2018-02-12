@@ -5,16 +5,16 @@ const StyledDiv = styled.div`
   margin-top: 15px;
 
 h1 {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 h2 {
-	margin: 5px 0;
-	display: inline-block;
+  margin: 5px 0;
+  display: inline-block;
 }
 
 span {
-  color: #f24e02;
+  color: #cc0606;
 }
 
 .status-board__buttons {
@@ -24,10 +24,11 @@ span {
 button {
   width: 75px;
   margin: 0 10px 20px;
-  padding: 10px 0;
+  padding: 10px 0 7px;
   border-radius: 10px;
-  font-family: Roboto, sans-serif;
+  font-family: Orbitron, sans-serif;
   font-weight: 600;
+  color: #25292e;
   &:hover {
     cursor: pointer;
   }

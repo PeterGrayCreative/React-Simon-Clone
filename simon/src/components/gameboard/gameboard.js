@@ -12,9 +12,9 @@ const StyledDiv = styled.div`
     display: inline-block;
     width: 150px;
     padding-bottom: 150px;
-    /* &:hover: {
+    &:hover {
       cursor: pointer;
-    } */
+    }
   }
 
   .button--green {
@@ -48,7 +48,7 @@ class GameBoard extends Component {
   render() {
     return (
       <StyledDiv>
-        <div className='button button--green'></div> =
+        <div className='button button--green'></div>
         <div className='button button--red'></div>
         <div className='button button--yellow'></div>
         <div className='button button--blue'></div>

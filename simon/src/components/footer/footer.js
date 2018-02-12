@@ -4,13 +4,14 @@ import styled from 'styled-components';
 const StyledDiv = styled.div`
   p {
     color: #000000 ;
-    width: 400px;
+    width: 450px;
     margin: 10px auto;
+    line-height: 115%
   }
 
   a {
     text-decoration: none;
-    color: 
+    color: #060b9b;
   }
 `;
 
