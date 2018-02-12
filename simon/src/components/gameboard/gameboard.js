@@ -13,6 +13,7 @@ const StyledDiv = styled.div`
     display: inline-block;
     width: 150px;
     padding-bottom: 150px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
     &:hover {
       cursor: pointer;
     }
