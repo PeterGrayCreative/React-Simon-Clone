@@ -6,6 +6,7 @@ const StyledDiv = styled.div`
   h1 {
     font-family: Roboto, sans-serif;
     font-size: 50px;
+    margin-top: 10px;
     background-color: #25292e;
     -webkit-background-clip: text;
     background-clip: text;

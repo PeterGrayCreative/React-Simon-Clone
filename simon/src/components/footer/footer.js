@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   letter-spacing: 1px;
-
+  
   p {
     color: #000000 ;
     width: 500px;
@@ -16,7 +16,6 @@ const StyledDiv = styled.div`
     color: #060b9b;
   }
 `;
-
 class Footer extends Component {
   render() {
     return (

@@ -11,6 +11,7 @@ const StyledDiv = styled.div`
   min-height: 600px;
   margin: 20px auto;
   padding: 15px;
+  /* background-color: #808080; */
   background-color: #aaafba;
   box-sizing: border-box;
   user-select: none;

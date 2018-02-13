@@ -27,7 +27,8 @@ button {
   margin: 0 10px 20px;
   padding: 10px 0 7px;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);  
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px;   
   font-family: Orbitron, sans-serif;
   font-weight: 600;
   color: #25292e;
@@ -36,6 +37,10 @@ button {
   }
   &:focus {
     outline: 0;
+  }
+  &:active {
+    box-shadow: none;
+    border: none;
   }
 }
 `;

@@ -23,6 +23,9 @@ const StyledDiv = styled.div`
     margin-top: 18px;
     margin-right: 2px;
     border-radius: 100% 0 0 0;
+    &:active {
+      box-shadow: inset 6px 6px 10px #2a2a2a;
+    }
   }
 
   .button--red {
@@ -30,18 +33,27 @@ const StyledDiv = styled.div`
     margin-top: 18px;
     margin-left: 2px;    
     border-radius: 0 100% 0 0;
+    &:active {
+      box-shadow: inset -6px 6px 10px #2a2a2a;
+    }
   }
 
   .button--yellow {
     background-color: #cccc06;
     margin-right: 2px;   
     border-radius: 0 0 0 100%;
+    &:active {
+      box-shadow: inset 6px -6px 10px #2a2a2a;
+    }
   }
 
   .button--blue {
     background-color: #060b9b;
     border-radius: 0 0 100% 0;
-    margin-left: 2px;    
+    margin-left: 2px;
+    &:active {
+      box-shadow: inset -6px -6px 10px #2a2a2a;
+    }
   }
 `;
 
