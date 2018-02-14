@@ -11,8 +11,8 @@ const StyledDiv = styled.div`
   min-height: 600px;
   margin: 20px auto;
   padding: 15px;
-  /* background-color: #808080; */
-  background-color: #aaafba;
+  /* background-color: #aaafba; */
+  background-color: #808080;
   box-sizing: border-box;
   user-select: none;
   border-radius: 4px;
@@ -22,6 +22,19 @@ const StyledDiv = styled.div`
 `;
 
 class App extends Component {
+  state = {
+    round: 1,
+    colorActive: false,
+    playList: [],
+    userClicks: [],
+  }
+
+  random = () => {
+    const temp = this.state.playList;
+    temp.push(Math.floor(Math.random() * 4));
+    this.setState({ playlist: temp }, () => console.log(this.state.playList));
+  }
+
   render() {
     return (
       <StyledDiv>
@@ -31,6 +44,9 @@ class App extends Component {
         <Footer />
       </StyledDiv>
     );
+  }
+  componentDidMount() {
+    this.random();
   }
 }
 

@@ -25,6 +25,7 @@ const StyledDiv = styled.div`
     border-radius: 100% 0 0 0;
     &:active {
       box-shadow: inset 6px 6px 10px #2a2a2a;
+      background-color: #89ff94;
     }
   }
 
@@ -35,6 +36,7 @@ const StyledDiv = styled.div`
     border-radius: 0 100% 0 0;
     &:active {
       box-shadow: inset -6px 6px 10px #2a2a2a;
+      background-color: #ed8782;
     }
   }
 
@@ -44,6 +46,7 @@ const StyledDiv = styled.div`
     border-radius: 0 0 0 100%;
     &:active {
       box-shadow: inset 6px -6px 10px #2a2a2a;
+      background-color: #fbff89;
     }
   }
 
@@ -53,6 +56,7 @@ const StyledDiv = styled.div`
     margin-left: 2px;
     &:active {
       box-shadow: inset -6px -6px 10px #2a2a2a;
+      background-color: #89c9ff;
     }
   }
 `;

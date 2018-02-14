@@ -22,7 +22,7 @@ class Footer extends Component {
       <StyledDiv>
         <p>Design &amp; Development by Jonathan M. Brunt 2018</p>
         <p>Educational Project Inspired by the Original "Simon", a Registered Trademark of Milton Bradley</p>
-        <p>Sound Effects Obtained From <a href='https://www.zapsplat.com' target='_blank'>https://www.zapsplat.com</a></p>
+        <p>Sound Effects Obtained From <a href='https://www.zapsplat.com' rel="noopener noreferrer" target='_blank'>https://www.zapsplat.com</a></p>
       </StyledDiv>
     );
   }
