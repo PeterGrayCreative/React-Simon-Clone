@@ -11,7 +11,6 @@ const StyledDiv = styled.div`
   min-height: 600px;
   margin: 20px auto;
   padding: 15px;
-  /* background-color: #aaafba; */
   background-color: #808080;
   box-sizing: border-box;
   user-select: none;
@@ -27,6 +26,7 @@ class App extends Component {
     colorActive: false,
     playList: [],
     userClicks: [],
+    timing: 700,
   }
 
   random = () => {
@@ -34,6 +34,17 @@ class App extends Component {
     temp.push(Math.floor(Math.random() * 4));
     this.setState({ playlist: temp }, () => console.log(this.state.playList));
   }
+
+  // execute = () => {
+  //   this.state.playList.forEach(val => {
+  //     setTimeout(function() {
+  //       fire(ref[playList[i]][0], ref[playList[i]][1]);
+  //     }, this.state.timing);
+  //       setTimeout(function() {
+  //         colorsActive = true;
+  //       }, this.state.timing + 700);
+  //    }
+  // }
 
   render() {
     return (
