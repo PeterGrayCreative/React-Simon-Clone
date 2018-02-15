@@ -6,21 +6,26 @@ const StyledDiv = styled.div`
     width: 150px;
     margin-left: 2px;
     padding-bottom: 150px;
-    background-color: #060b9b;
+    /* background-color: #060b9b; */
     border-radius: 0 0 100% 0;
     &:hover {
       cursor: pointer;
     }
-    &:active {
+    /* &:active {
       box-shadow: inset -6px -6px 10px #2a2a2a;
       background-color: #89c9ff;
-    }
+    } */
 `;
 
 class BlueButton extends Component {
   render() {
     return (
-      <StyledDiv onClick={this.props.handleClick}></StyledDiv>
+      <StyledDiv onClick={this.props.handleClick(this.props.color)}
+        style={ {
+          backgroundColor: (this.props.blueActive) ? '#89c9ff' : '#060b9b',
+          boxShadow: (this.props.blueActive) ? 'inset -6px -6px 10px #2a2a2a' : 'none',
+        } }>
+      </StyledDiv>
     );
   }
 }

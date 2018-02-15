@@ -28,7 +28,10 @@ class App extends Component {
       playList: [],
       userClicks: [],
       timing: 700,
-      greenActive: false;
+      greenActive: false,
+      redActive: false,
+      yellowActive: false,
+      blueActive: false,
     };
   }
 
@@ -38,9 +41,17 @@ class App extends Component {
     this.setState({ playlist: temp }, () => console.log(this.state.playList));
   }
 
-  handleClick = (event) => {
+  handleClick = color => (event) => {
     event.preventDefault();
-    console.log('clicked', event);
+    const ref = {
+      green: 0, red: 1, yellow: 2, blue: 3,
+    };
+    const temp = [...this.state.userClicks, ref[color]];
+    console.log(temp);
+    this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
+      this.setState({ [`${color}Active`]: false, userClicks: temp });
+      console.log(this.state);
+    }, 150));
   }
 
   // execute = () => {
@@ -58,7 +69,13 @@ class App extends Component {
     return (
       <StyledDiv>
         <Header />
-        <GameBoard handleClick={this.handleClick}/>
+        <GameBoard
+          handleClick={this.handleClick}
+          greenActive={this.state.greenActive}
+          redActive={this.state.redActive}
+          yellowActive={this.state.yellowActive}
+          blueActive={this.state.blueActive}
+        />
         <StatusBoard />
         <Footer />
       </StyledDiv>

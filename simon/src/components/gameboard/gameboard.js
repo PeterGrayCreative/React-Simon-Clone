@@ -21,10 +21,26 @@ class GameBoard extends Component {
   render() {
     return (
       <StyledDiv>
-        <GreenButton handleClick={this.props.handleClick} />
-        <RedButton handleClick={this.props.handleClick} />
-        <YellowButton handleClick={this.props.handleClick} />
-        <BlueButton handleClick={this.props.handleClick} />
+        <GreenButton
+          color='green'
+          handleClick={this.props.handleClick}
+          greenActive={this.props.greenActive}
+        />
+        <RedButton
+          color='red'
+          handleClick={this.props.handleClick}
+          redActive={this.props.redActive}
+        />
+        <YellowButton
+          color='yellow'
+          handleClick={this.props.handleClick}
+          yellowActive={this.props.yellowActive}
+        />
+        <BlueButton
+          color='blue'
+          handleClick={this.props.handleClick}
+          blueActive={this.props.blueActive}
+        />
       </StyledDiv>
     );
   }

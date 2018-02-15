@@ -7,15 +7,15 @@ const StyledDiv = styled.div`
     margin-top: 18px;
     margin-right: 2px;
     padding-bottom: 150px;
-    background-color: #12990d;
+    /* background-color: #12990d; */
     border-radius: 100% 0 0 0;
     &:hover {
       cursor: pointer;
     }
-    &:active {
+    /* &:active {
       box-shadow: inset 6px 6px 10px #2a2a2a;
       background-color: #89ff94;
-    }
+    } */
 `;
 
 class GreenButton extends Component {
@@ -24,7 +24,13 @@ class GreenButton extends Component {
   }
   render() {
     return (
-      <StyledDiv onClick={this.props.handleClick}></StyledDiv>
+      <StyledDiv
+        onClick={this.props.handleClick(this.props.color)}
+        style={ {
+          backgroundColor: (this.props.greenActive) ? '#89ff94' : '#12990d',
+          boxShadow: (this.props.greenActive) ? 'inset 6px 6px 10px #2a2a2a' : 'none',
+        } }>
+      </StyledDiv>
     );
   }
 }
