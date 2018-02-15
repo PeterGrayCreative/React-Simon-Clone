@@ -32,13 +32,21 @@ class App extends Component {
       redActive: false,
       yellowActive: false,
       blueActive: false,
+      startDisabled: false,
+      speedDisabled: false,
+      strictDisabled: false,
+      resetDisabled: true,
     };
   }
 
   random = () => {
     const temp = this.state.playList;
     temp.push(Math.floor(Math.random() * 4));
-    this.setState({ playlist: temp }, () => console.log(this.state.playList));
+    this.setState({ playList: temp }, () => this.execute());
+  }
+
+  handleStart = () => {
+    this.random();
   }
 
   handleClick = color => (event) => {
@@ -47,23 +55,26 @@ class App extends Component {
       green: 0, red: 1, yellow: 2, blue: 3,
     };
     const temp = [...this.state.userClicks, ref[color]];
-    console.log(temp);
     this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
-      this.setState({ [`${color}Active`]: false, userClicks: temp });
-      console.log(this.state);
+      this.setState({
+        [`${color}Active`]: false,
+        userClicks: temp,
+      });
     }, 150));
   }
 
-  // execute = () => {
-  //   this.state.playList.forEach(val => {
-  //     setTimeout(function() {
-  //       fire(ref[playList[i]][0], ref[playList[i]][1]);
-  //     }, this.state.timing);
-  //       setTimeout(function() {
-  //         colorsActive = true;
-  //       }, this.state.timing + 700);
-  //    }
-  // }
+  execute = () => {
+    console.log('executing');
+    console.log(this.state);
+    // this.state.playList.forEach(val => {
+    //   setTimeout(function() {
+    //     fire(ref[playList[i]][0], ref[playList[i]][1]);
+    //   }, this.state.timing);
+    //     setTimeout(function() {
+    //       colorsActive = true;
+    //     }, this.state.timing + 700);
+    //  }
+  }
 
   render() {
     return (
@@ -76,13 +87,19 @@ class App extends Component {
           yellowActive={this.state.yellowActive}
           blueActive={this.state.blueActive}
         />
-        <StatusBoard />
+        <StatusBoard
+          handleStart={this.handleStart}
+          startDisabled={this.state.startDisabled}
+          speedDisabled={this.state.speedDisabled}
+          strictDisabled={this.state.strictDisabled}
+          resetDisabled={this.state.resetDisabled}
+        />
         <Footer />
       </StyledDiv>
     );
   }
   componentDidMount() {
-    this.random();
+    // this.random();
   }
 }
 

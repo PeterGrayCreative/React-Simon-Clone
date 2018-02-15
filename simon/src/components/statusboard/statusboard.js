@@ -56,10 +56,42 @@ class StatusBoard extends Component {
         <h2>Strict Mode: <span>Off</span>&nbsp;&nbsp;</h2>
 
         <div className='status-board__buttons'>
-          <button>START</button>
-          <button>SPEED</button>
-          <button>STRICT</button>
-          <button>RESET</button>
+          <button
+            onClick={() => this.props.handleStart()}
+            disabled={this.props.startDisabled}
+            style={ {
+              backgroundColor: this.props.startDisabled ? '#cccccc' : '#fffafa',
+              color: this.props.startDisabled ? '#808080' : '#25292e',
+            } }>
+            START
+          </button>
+          <button
+            onClick={() => this.props.handleSpeed()}
+            disabled={this.props.speedDisabled}
+            style={ {
+              backgroundColor: this.props.speedDisabled ? '#cccccc' : '#fffafa',
+              color: this.props.speedDisabled ? '#808080' : '#25292e',
+            } }>
+            SPEED
+          </button>
+          <button
+            onClick={() => this.props.handleStrict()}
+            disabled={this.props.strictDisabled}
+            style={ {
+              backgroundColor: this.props.strictDisabled ? '#cccccc' : '#fffafa',
+              color: this.props.strictDisabled ? '#808080' : '#25292e',
+            } }>
+            STRICT
+          </button>
+          <button
+            onClick={() => this.props.handleReset()}
+            disabled={this.props.resetDisabled}
+            style={ {
+              backgroundColor: this.props.resetDisabled ? '#cccccc' : '#fffafa',
+              color: this.props.resetDisabled ? '#808080' : '#25292e',
+            } }>
+            RESET
+          </button>
         </div>
       </StyledDiv>
     );
