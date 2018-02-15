@@ -47,6 +47,12 @@ class App extends Component {
 
   handleStart = () => {
     this.random();
+    this.setState({
+      startDisabled: true,
+      speedDisabled: true,
+      strictDisabled: true,
+      resetDisabled: false,
+    });
   }
 
   handleClick = color => (event) => {
@@ -99,7 +105,7 @@ class App extends Component {
     );
   }
   componentDidMount() {
-    // this.random();
+
   }
 }
 
