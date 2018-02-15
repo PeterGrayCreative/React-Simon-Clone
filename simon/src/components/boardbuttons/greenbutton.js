@@ -19,9 +19,12 @@ const StyledDiv = styled.div`
 `;
 
 class GreenButton extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <StyledDiv></StyledDiv>
+      <StyledDiv onClick={this.props.handleClick}></StyledDiv>
     );
   }
 }

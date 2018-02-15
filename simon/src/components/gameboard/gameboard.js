@@ -15,13 +15,16 @@ const StyledDiv = styled.div`
 `;
 
 class GameBoard extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <StyledDiv>
-        <GreenButton />
-        <RedButton />
-        <YellowButton />
-        <BlueButton />
+        <GreenButton handleClick={this.props.handleClick} />
+        <RedButton handleClick={this.props.handleClick} />
+        <YellowButton handleClick={this.props.handleClick} />
+        <BlueButton handleClick={this.props.handleClick} />
       </StyledDiv>
     );
   }

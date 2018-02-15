@@ -20,7 +20,7 @@ const StyledDiv = styled.div`
 class BlueButton extends Component {
   render() {
     return (
-      <StyledDiv></StyledDiv>
+      <StyledDiv onClick={this.props.handleClick}></StyledDiv>
     );
   }
 }

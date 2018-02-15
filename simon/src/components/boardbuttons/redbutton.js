@@ -21,7 +21,7 @@ const StyledDiv = styled.div`
 class RedButton extends Component {
   render() {
     return (
-      <StyledDiv></StyledDiv>
+      <StyledDiv onClick={this.props.handleClick}></StyledDiv>
     );
   }
 }

@@ -21,18 +21,26 @@ const StyledDiv = styled.div`
 `;
 
 class App extends Component {
-  state = {
-    round: 1,
-    colorActive: false,
-    playList: [],
-    userClicks: [],
-    timing: 700,
+  constructor(props) {
+    super(props);
+    this.state = {
+      round: 1,
+      playList: [],
+      userClicks: [],
+      timing: 700,
+      greenActive: false;
+    };
   }
 
   random = () => {
     const temp = this.state.playList;
     temp.push(Math.floor(Math.random() * 4));
     this.setState({ playlist: temp }, () => console.log(this.state.playList));
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+    console.log('clicked', event);
   }
 
   // execute = () => {
@@ -50,7 +58,7 @@ class App extends Component {
     return (
       <StyledDiv>
         <Header />
-        <GameBoard />
+        <GameBoard handleClick={this.handleClick}/>
         <StatusBoard />
         <Footer />
       </StyledDiv>
