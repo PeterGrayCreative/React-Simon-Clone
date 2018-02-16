@@ -15,9 +15,6 @@ const StyledDiv = styled.div`
 `;
 
 class GameBoard extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <StyledDiv>

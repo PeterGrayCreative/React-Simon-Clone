@@ -19,9 +19,6 @@ const StyledDiv = styled.div`
 `;
 
 class GreenButton extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <StyledDiv
