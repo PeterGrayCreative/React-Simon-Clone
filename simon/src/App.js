@@ -38,6 +38,7 @@ class App extends Component {
       speedDisabled: false,
       strictDisabled: false,
       resetDisabled: true,
+      playAvailable: false,
     };
   }
 
@@ -54,6 +55,7 @@ class App extends Component {
       speedDisabled: true,
       strictDisabled: true,
       resetDisabled: false,
+      playAvailable: true,
     });
   }
 
@@ -82,22 +84,25 @@ class App extends Component {
       speedDisabled: false,
       strictDisabled: false,
       resetDisabled: true,
+      playAvailable: false,
     }, () => console.log(this.state));
   }
 
 
   handleClick = color => (event) => {
     event.preventDefault();
-    const ref = {
-      green: 0, red: 1, yellow: 2, blue: 3,
-    };
-    const temp = [...this.state.userClicks, ref[color]];
-    this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
-      this.setState({
-        [`${color}Active`]: false,
-        userClicks: temp,
-      });
-    }, 150));
+    if (this.state.playAvailable) {
+      const ref = {
+        green: 0, red: 1, yellow: 2, blue: 3,
+      };
+      const temp = [...this.state.userClicks, ref[color]];
+      this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
+        this.setState({
+          [`${color}Active`]: false,
+          userClicks: temp,
+        });
+      }, 150));
+    }
   }
 
   execute = () => {
