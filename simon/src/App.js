@@ -30,7 +30,6 @@ class App extends Component {
       round: 0,
       computerSequence: [],
       playerSequence: [],
-      // gameRunning: false,
       strictMode: false,
       speedMode: 700,
       greenActive: false,
@@ -57,7 +56,6 @@ class App extends Component {
       speedDisabled: true,
       strictDisabled: true,
       resetDisabled: false,
-      playAvailable: true,
     });
     this.addToSequence();
   }
@@ -102,6 +100,7 @@ class App extends Component {
       const temp = [...this.state.playerSequence, ref[color]];
       this.setState({ playerSequence: temp }, () => {
         if (this.state.playerSequence.length === this.state.round) {
+          this.setState({ playAvailable: false });
           this.compareSequence();
         }
       });
@@ -120,7 +119,6 @@ class App extends Component {
     };
     const newRound = this.state.round + 1;
     this.setState({
-      playAvailable: false,
       round: newRound,
     });
     this.state.computerSequence.forEach((val, index) => {
@@ -150,7 +148,17 @@ class App extends Component {
         correct = false;
       }
     });
-    console.log(correct);
+    this.setState({ playerSequence: [] }, () => {
+      if (correct && this.state.round < 20) {
+        this.addToSequence();
+      } else if (!correct && !this.state.strictMode) {
+        this.replayRound();
+      } else if (!correct && this.state.strictMode) {
+        this.loseGame();
+      } else {
+        this.winGame();
+      }
+    });
   }
 
   replayRound = () => {
