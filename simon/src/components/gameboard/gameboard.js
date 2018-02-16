@@ -12,6 +12,7 @@ const StyledDiv = styled.div`
   background-color: #2a2a2a;
   border-radius: 100%;
   box-shadow: 3px 3px 5px #2a2a2a, inset -2px -2px 2px #696969, inset 2px 2px 2px #696969;
+  -webkit-box-shadow: 3px 3px 5px #2a2a2a, inset -2px -2px 2px #696969, inset 2px 2px 2px #696969;
 `;
 
 class GameBoard extends Component {
@@ -20,22 +21,22 @@ class GameBoard extends Component {
       <StyledDiv>
         <GreenButton
           color='green'
-          handleClick={this.props.handleClick}
+          handleBoardClick={this.props.handleBoardClick}
           greenActive={this.props.greenActive}
         />
         <RedButton
           color='red'
-          handleClick={this.props.handleClick}
+          handleBoardClick={this.props.handleBoardClick}
           redActive={this.props.redActive}
         />
         <YellowButton
           color='yellow'
-          handleClick={this.props.handleClick}
+          handleBoardClick={this.props.handleBoardClick}
           yellowActive={this.props.yellowActive}
         />
         <BlueButton
           color='blue'
-          handleClick={this.props.handleClick}
+          handleBoardClick={this.props.handleBoardClick}
           blueActive={this.props.blueActive}
         />
       </StyledDiv>

@@ -22,7 +22,7 @@ class GreenButton extends Component {
   render() {
     return (
       <StyledDiv
-        onClick={this.props.handleClick(this.props.color)}
+        onClick={this.props.handleBoardClick(this.props.color)}
         style={ {
           backgroundColor: (this.props.greenActive) ? '#89ff94' : '#12990d',
           boxShadow: (this.props.greenActive) ? 'inset 6px 6px 10px #2a2a2a' : 'none',

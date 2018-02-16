@@ -22,7 +22,7 @@ class RedButton extends Component {
   render() {
     return (
       <StyledDiv
-        onClick={this.props.handleClick(this.props.color)}
+        onClick={this.props.handleBoardClick(this.props.color)}
         style={ {
           backgroundColor: (this.props.redActive) ? '#ed8782' : '#cc0606',
           boxShadow: (this.props.redActive) ? 'inset -6px 6px 10px #2a2a2a' : 'none',

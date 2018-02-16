@@ -20,7 +20,7 @@ const StyledDiv = styled.div`
 class BlueButton extends Component {
   render() {
     return (
-      <StyledDiv onClick={this.props.handleClick(this.props.color)}
+      <StyledDiv onClick={this.props.handleBoardClick(this.props.color)}
         style={ {
           backgroundColor: (this.props.blueActive) ? '#89c9ff' : '#060b9b',
           boxShadow: (this.props.blueActive) ? 'inset -6px -6px 10px #2a2a2a' : 'none',

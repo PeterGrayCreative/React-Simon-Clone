@@ -45,14 +45,14 @@ class App extends Component {
     };
   }
 
-  random = () => {
+  randomMove = () => {
     const temp = this.state.playList;
     temp.push(Math.floor(Math.random() * 4));
-    this.setState({ playList: temp }, () => this.execute());
+    this.setState({ playList: temp }, () => this.executeComputerSequence());
   }
 
   handleStart = () => {
-    this.random();
+    this.randomMove();
     this.setState({
       startDisabled: true,
       speedDisabled: true,
@@ -92,25 +92,25 @@ class App extends Component {
   }
 
 
-  handleClick = color => (event) => {
+  handleBoardClick = color => (event) => {
     event.preventDefault();
     const ref = {
       green: 0, red: 1, yellow: 2, blue: 3,
     };
     if (this.state.playAvailable) {
-      this.activateButton(color);
+      this.activateBoardButton(color);
       const temp = [...this.state.userClicks, ref[color]];
       this.setState({ userClicks: temp }, () => console.log(this.state));
     }
   }
 
-  activateButton = (color) => {
+  activateBoardButton = (color) => {
     this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
       this.setState({ [`${color}Active`]: false, });
     }, 150));
   }
 
-  execute = () => {
+  executeComputerSequence = () => {
     const ref = {
       0: 'green', 1: 'red', 2: 'yellow', 3: 'blue',
     };
@@ -119,7 +119,7 @@ class App extends Component {
       const color = ref[val];
       const delay = this.state.speedMode * (index + 1);
       setTimeout(() => {
-        this.activateButton(color);
+        this.activateBoardButton(color);
       }, delay);
     });
     setTimeout(() => {
@@ -127,12 +127,36 @@ class App extends Component {
     }, (this.state.playList.length + 1) * this.state.speedMode);
   }
 
+  computer = () => {
+
+  }
+
+  player = () => {
+
+  }
+
+  compare = () => {
+
+  }
+
+  replayRound = () => {
+
+  }
+
+  lose = () => {
+
+  }
+
+  win = () => {
+
+  }
+
   render() {
     return (
       <StyledDiv>
         <Header />
         <GameBoard
-          handleClick={this.handleClick}
+          handleBoardClick={this.handleBoardClick}
           greenActive={this.state.greenActive}
           redActive={this.state.redActive}
           yellowActive={this.state.yellowActive}
@@ -149,6 +173,7 @@ class App extends Component {
           resetDisabled={this.state.resetDisabled}
           speed={this.state.speedMode}
           strict={this.state.strictMode}
+          round={this.state.round}
         />
         <Footer />
       </StyledDiv>
