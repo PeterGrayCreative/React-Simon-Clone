@@ -27,7 +27,9 @@ class App extends Component {
       round: 1,
       playList: [],
       userClicks: [],
-      timing: 700,
+      gameRunning: false,
+      strictMode: false,
+      speedMode: 700,
       greenActive: false,
       redActive: false,
       yellowActive: false,
@@ -54,6 +56,35 @@ class App extends Component {
       resetDisabled: false,
     });
   }
+
+  handleSpeed = () => {
+    let newSpeed;
+    if (this.state.speedMode === 700) {
+      newSpeed = 400;
+    } else {
+      newSpeed = 700;
+    }
+    this.setState({ speedMode: newSpeed });
+  }
+
+  handleStrict = () => {
+    const newStrict = (!this.state.strictMode);
+    this.setState({ strictMode: newStrict });
+  }
+
+  handleReset = () => {
+    this.setState({
+      round: 1,
+      playList: [],
+      userClicks: [],
+      gameRunning: false,
+      startDisabled: false,
+      speedDisabled: false,
+      strictDisabled: false,
+      resetDisabled: true,
+    }, () => console.log(this.state));
+  }
+
 
   handleClick = color => (event) => {
     event.preventDefault();
@@ -95,18 +126,23 @@ class App extends Component {
         />
         <StatusBoard
           handleStart={this.handleStart}
+          handleSpeed={this.handleSpeed}
+          handleStrict={this.handleStrict}
+          handleReset={this.handleReset}
           startDisabled={this.state.startDisabled}
           speedDisabled={this.state.speedDisabled}
           strictDisabled={this.state.strictDisabled}
           resetDisabled={this.state.resetDisabled}
+          speed={this.state.speedMode}
+          strict={this.state.strictMode}
         />
         <Footer />
       </StyledDiv>
     );
   }
-  componentDidMount() {
+  // componentDidMount() {
 
-  }
+  // }
 }
 
 export default App;
