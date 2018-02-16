@@ -27,10 +27,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      round: 1,
-      playList: [1, 2, 3, 2, 1, 0, 0],
-      userClicks: [],
-      gameRunning: false,
+      round: 0,
+      computerSequence: [],
+      playerSequence: [],
+      // gameRunning: false,
       strictMode: false,
       speedMode: 700,
       greenActive: false,
@@ -45,14 +45,13 @@ class App extends Component {
     };
   }
 
-  randomMove = () => {
-    const temp = this.state.playList;
+  addToSequence = () => {
+    const temp = this.state.computerSequence;
     temp.push(Math.floor(Math.random() * 4));
-    this.setState({ playList: temp }, () => this.executeComputerSequence());
+    this.setState({ computerSequence: temp }, () => this.executeComputerSequence());
   }
 
   handleStart = () => {
-    this.randomMove();
     this.setState({
       startDisabled: true,
       speedDisabled: true,
@@ -60,6 +59,7 @@ class App extends Component {
       resetDisabled: false,
       playAvailable: true,
     });
+    this.addToSequence();
   }
 
   handleSpeed = () => {
@@ -79,9 +79,9 @@ class App extends Component {
 
   handleReset = () => {
     this.setState({
-      round: 1,
-      playList: [],
-      userClicks: [],
+      round: 0,
+      computerSequence: [],
+      playerSequence: [],
       gameRunning: false,
       startDisabled: false,
       speedDisabled: false,
@@ -99,8 +99,12 @@ class App extends Component {
     };
     if (this.state.playAvailable) {
       this.activateBoardButton(color);
-      const temp = [...this.state.userClicks, ref[color]];
-      this.setState({ userClicks: temp }, () => console.log(this.state));
+      const temp = [...this.state.playerSequence, ref[color]];
+      this.setState({ playerSequence: temp }, () => {
+        if (this.state.playerSequence.length === this.state.round) {
+          this.compareSequence();
+        }
+      });
     }
   }
 
@@ -114,8 +118,12 @@ class App extends Component {
     const ref = {
       0: 'green', 1: 'red', 2: 'yellow', 3: 'blue',
     };
-    this.setState({ playAvailable: false });
-    this.state.playList.forEach((val, index) => {
+    const newRound = this.state.round + 1;
+    this.setState({
+      playAvailable: false,
+      round: newRound,
+    });
+    this.state.computerSequence.forEach((val, index) => {
       const color = ref[val];
       const delay = this.state.speedMode * (index + 1);
       setTimeout(() => {
@@ -123,31 +131,37 @@ class App extends Component {
       }, delay);
     });
     setTimeout(() => {
-      this.setState({ playAvailable: true });
-    }, (this.state.playList.length + 1) * this.state.speedMode);
+      this.playerTurn();
+    }, (this.state.computerSequence.length + 1) * this.state.speedMode);
   }
 
-  computer = () => {
+  // computerTurn = () => {
 
+  // }
+
+  playerTurn = () => {
+    this.setState({ playAvailable: true, });
   }
 
-  player = () => {
-
-  }
-
-  compare = () => {
-
+  compareSequence = () => {
+    let correct = true;
+    this.state.playerSequence.forEach((val, index) => {
+      if (val !== this.state.computerSequence[index]) {
+        correct = false;
+      }
+    });
+    console.log(correct);
   }
 
   replayRound = () => {
 
   }
 
-  lose = () => {
+  loseGame = () => {
 
   }
 
-  win = () => {
+  winGame = () => {
 
   }
 

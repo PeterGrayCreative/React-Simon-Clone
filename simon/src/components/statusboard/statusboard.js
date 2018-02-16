@@ -51,7 +51,7 @@ class StatusBoard extends Component {
     return (
       <StyledDiv>
         <h1>Ready To Play!</h1>
-        <h2>Round: <span>1</span>&nbsp;&nbsp;</h2>
+        <h2>Round: <span>{this.props.round}</span>&nbsp;&nbsp;</h2>
         <h2>Speed: <span>{(this.props.speed === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
         <h2>Strict Mode: <span>{(this.props.strict) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
 
