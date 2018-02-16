@@ -11,9 +11,12 @@ const StyledDiv = styled.div`
   min-height: 600px;
   margin: 20px auto;
   padding: 15px;
-  background-color: #808080;
   box-sizing: border-box;
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background-color: #808080;
   border-radius: 4px;
   text-align: center;
   font-family: Orbitron, sans-serif;
@@ -25,7 +28,7 @@ class App extends Component {
     super(props);
     this.state = {
       round: 1,
-      playList: [],
+      playList: [1, 2, 3, 2, 1, 0, 0],
       userClicks: [],
       gameRunning: false,
       strictMode: false,
@@ -85,37 +88,45 @@ class App extends Component {
       strictDisabled: false,
       resetDisabled: true,
       playAvailable: false,
-    }, () => console.log(this.state));
+    });
   }
 
 
   handleClick = color => (event) => {
     event.preventDefault();
     if (this.state.playAvailable) {
-      const ref = {
-        green: 0, red: 1, yellow: 2, blue: 3,
-      };
-      const temp = [...this.state.userClicks, ref[color]];
-      this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
-        this.setState({
-          [`${color}Active`]: false,
-          userClicks: temp,
-        });
-      }, 150));
+      this.activateButton(color);
     }
   }
 
+  activateButton = (color) => {
+    const ref = {
+      green: 0, red: 1, yellow: 2, blue: 3,
+    };
+    // const temp = [...this.state.userClicks, ref[color]];
+    this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
+      this.setState({
+        [`${color}Active`]: false,
+        // userClicks: temp,
+      });
+    }, 150));
+  }
+
   execute = () => {
-    console.log('executing');
-    console.log(this.state);
-    // this.state.playList.forEach(val => {
-    //   setTimeout(function() {
-    //     fire(ref[playList[i]][0], ref[playList[i]][1]);
-    //   }, this.state.timing);
-    //     setTimeout(function() {
-    //       colorsActive = true;
-    //     }, this.state.timing + 700);
-    //  }
+    const ref = {
+      0: 'green', 1: 'red', 2: 'yellow', 3: 'blue',
+    };
+    this.setState({ playAvailable: false });
+    this.state.playList.forEach((val, index) => {
+      const color = ref[val];
+      const delay = this.state.speedMode * (index + 1);
+      setTimeout(() => {
+        this.activateButton(color);
+      }, delay);
+    });
+    setTimeout(() => {
+      this.setState({ playAvailable: true });
+    }, (this.state.playList.length + 1) * this.state.speedMode);
   }
 
   render() {
@@ -145,9 +156,6 @@ class App extends Component {
       </StyledDiv>
     );
   }
-  // componentDidMount() {
-
-  // }
 }
 
 export default App;
