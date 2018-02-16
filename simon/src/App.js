@@ -94,21 +94,19 @@ class App extends Component {
 
   handleClick = color => (event) => {
     event.preventDefault();
+    const ref = {
+      green: 0, red: 1, yellow: 2, blue: 3,
+    };
     if (this.state.playAvailable) {
       this.activateButton(color);
+      const temp = [...this.state.userClicks, ref[color]];
+      this.setState({ userClicks: temp }, () => console.log(this.state));
     }
   }
 
   activateButton = (color) => {
-    const ref = {
-      green: 0, red: 1, yellow: 2, blue: 3,
-    };
-    // const temp = [...this.state.userClicks, ref[color]];
     this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
-      this.setState({
-        [`${color}Active`]: false,
-        // userClicks: temp,
-      });
+      this.setState({ [`${color}Active`]: false, });
     }, 150));
   }
 
