@@ -149,7 +149,6 @@ class App extends Component {
         const newRound = this.state.round + 1;
         this.setState({ round: newRound, }, () => this.addToSequence());
       } else if (!correct && !this.state.strictMode) {
-        console.log('you must replay');
         this.replaySequence();
       } else if (!correct && this.state.strictMode) {
         this.loseGame();

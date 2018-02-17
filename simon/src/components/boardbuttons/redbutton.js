@@ -26,6 +26,7 @@ class RedButton extends Component {
         style={ {
           backgroundColor: (this.props.redActive) ? '#ed8782' : '#cc0606',
           boxShadow: (this.props.redActive) ? 'inset -6px 6px 10px #2a2a2a' : 'none',
+          WebkitTapHighlightColor: (this.props.redActive) ? 'rgba(0, 0, 0, 0)' : 'none',
         } }>
       </StyledDiv>
     );

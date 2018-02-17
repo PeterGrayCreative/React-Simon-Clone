@@ -25,6 +25,7 @@ class YellowButton extends Component {
         style={ {
           backgroundColor: (this.props.yellowActive) ? '#fbff89' : '#cccc06',
           boxShadow: (this.props.yellowActive) ? 'inset 6px -6px 10px #2a2a2a' : 'none',
+          WebkitTapHighlightColor: (this.props.yellowActive) ? 'rgba(0, 0, 0, 0)' : 'none',
         } } >
       </StyledDiv>
     );

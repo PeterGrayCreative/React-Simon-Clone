@@ -23,6 +23,7 @@ class GameBoard extends Component {
           color='green'
           handleBoardClick={this.props.handleBoardClick}
           greenActive={this.props.greenActive}
+          webkit
         />
         <RedButton
           color='red'

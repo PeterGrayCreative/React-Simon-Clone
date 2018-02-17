@@ -24,6 +24,7 @@ class BlueButton extends Component {
         style={ {
           backgroundColor: (this.props.blueActive) ? '#89c9ff' : '#060b9b',
           boxShadow: (this.props.blueActive) ? 'inset -6px -6px 10px #2a2a2a' : 'none',
+          WebkitTapHighlightColor: (this.props.blueActive) ? 'rgba(0, 0, 0, 0)' : 'none',
         } }>
       </StyledDiv>
     );

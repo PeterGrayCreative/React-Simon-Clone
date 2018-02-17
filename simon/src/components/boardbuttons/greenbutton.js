@@ -26,6 +26,7 @@ class GreenButton extends Component {
         style={ {
           backgroundColor: (this.props.greenActive) ? '#89ff94' : '#12990d',
           boxShadow: (this.props.greenActive) ? 'inset 6px 6px 10px #2a2a2a' : 'none',
+          WebkitTapHighlightColor: (this.props.greenActive) ? 'rgba(0, 0, 0, 0)' : 'none',
         } }>
       </StyledDiv>
     );
