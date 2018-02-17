@@ -32,15 +32,15 @@ class App extends Component {
       playerSequence: [],
       strictMode: false,
       speedMode: 700,
-      greenActive: false,
-      redActive: false,
-      yellowActive: false,
-      blueActive: false,
       startDisabled: false,
       speedDisabled: false,
       strictDisabled: false,
       resetDisabled: true,
       playAvailable: false,
+      greenActive: false,
+      redActive: false,
+      yellowActive: false,
+      blueActive: false,
     };
   }
 
@@ -80,7 +80,6 @@ class App extends Component {
       round: 1,
       computerSequence: [],
       playerSequence: [],
-      gameRunning: false,
       startDisabled: false,
       speedDisabled: false,
       strictDisabled: false,
@@ -117,6 +116,7 @@ class App extends Component {
     const ref = {
       0: 'green', 1: 'red', 2: 'yellow', 3: 'blue',
     };
+    this.setState({ resetDisabled: true });
     this.state.computerSequence.forEach((val, index) => {
       const color = ref[val];
       const delay = this.state.speedMode * (index + 1);
@@ -125,7 +125,7 @@ class App extends Component {
       }, delay);
     });
     setTimeout(() => {
-      this.setState({ resetDisabled: true, });
+      this.setState({ resetDisabled: false, });
       this.playerTurn();
     }, (this.state.computerSequence.length + 1) * this.state.speedMode);
   }
