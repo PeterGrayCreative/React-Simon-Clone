@@ -41,6 +41,7 @@ class App extends Component {
       redActive: false,
       yellowActive: false,
       blueActive: false,
+      bannerText: 'Ready To Play!',
     };
   }
 
@@ -56,6 +57,7 @@ class App extends Component {
       speedDisabled: true,
       strictDisabled: true,
       resetDisabled: false,
+      bannerText: 'Playing...',
     });
     this.addToSequence();
   }
@@ -85,6 +87,7 @@ class App extends Component {
       strictDisabled: false,
       resetDisabled: true,
       playAvailable: false,
+      bannerText: 'Ready To Play!'
     });
   }
 
@@ -147,7 +150,7 @@ class App extends Component {
         this.setState({ round: newRound, }, () => this.addToSequence());
       } else if (!correct && !this.state.strictMode) {
         console.log('you must replay');
-        this.executeComputerSequence();
+        this.replaySequence();
       } else if (!correct && this.state.strictMode) {
         this.loseGame();
       } else {
@@ -156,12 +159,26 @@ class App extends Component {
     });
   }
 
+  replaySequence = () => {
+    this.setState({ bannerText: 'Try The Sequence Again!' });
+    setTimeout(() => {
+      this.setState({ bannerText: 'Playing...' });
+      this.executeComputerSequence();
+    }, 1200);
+  }
+
   loseGame = () => {
-    console.log('you lose');
+    this.setState({ bannerText: 'You Lose!! Try Again!!' });
+    setTimeout(() => {
+      this.handleReset();
+    }, 3000);
   }
 
   winGame = () => {
-    console.log('you win');
+    this.setState({ bannerText: 'You Win!! Play Again!!' });
+    setTimeout(() => {
+      this.handleReset();
+    }, 3000);
   }
 
   render() {
@@ -187,6 +204,7 @@ class App extends Component {
           speed={this.state.speedMode}
           strict={this.state.strictMode}
           round={this.state.round}
+          bannerText={this.state.bannerText}
         />
         <Footer />
       </StyledDiv>

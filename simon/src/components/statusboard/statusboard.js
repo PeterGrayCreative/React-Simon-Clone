@@ -27,7 +27,7 @@ button {
   margin: 0 10px 20px;
   padding: 10px 0 7px;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); 
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   background-color: #fffafa;
   letter-spacing: 1px;   
   font-family: Orbitron, sans-serif;
@@ -43,6 +43,7 @@ button {
     box-shadow: none;
     border: none;
   }
+
 }
 `;
 
@@ -50,7 +51,7 @@ class StatusBoard extends Component {
   render() {
     return (
       <StyledDiv>
-        <h1>Ready To Play!</h1>
+        <h1>{this.props.bannerText}</h1>
         <h2>Round: <span>{this.props.round}</span>&nbsp;&nbsp;</h2>
         <h2>Speed: <span>{(this.props.speed === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
         <h2>Strict Mode: <span>{(this.props.strict) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
