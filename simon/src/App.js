@@ -27,7 +27,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      round: 0,
+      round: 1,
       computerSequence: [],
       playerSequence: [],
       strictMode: false,
@@ -47,7 +47,7 @@ class App extends Component {
   addToSequence = () => {
     const temp = this.state.computerSequence;
     temp.push(Math.floor(Math.random() * 4));
-    this.setState({ computerSequence: temp }, () => this.executeComputerSequence());
+    this.setState({ computerSequence: temp, }, () => this.executeComputerSequence());
   }
 
   handleStart = () => {
@@ -67,17 +67,17 @@ class App extends Component {
     } else {
       newSpeed = 700;
     }
-    this.setState({ speedMode: newSpeed });
+    this.setState({ speedMode: newSpeed, });
   }
 
   handleStrict = () => {
     const newStrict = (!this.state.strictMode);
-    this.setState({ strictMode: newStrict });
+    this.setState({ strictMode: newStrict, });
   }
 
   handleReset = () => {
     this.setState({
-      round: 0,
+      round: 1,
       computerSequence: [],
       playerSequence: [],
       gameRunning: false,
@@ -98,9 +98,9 @@ class App extends Component {
     if (this.state.playAvailable) {
       this.activateBoardButton(color);
       const temp = [...this.state.playerSequence, ref[color]];
-      this.setState({ playerSequence: temp }, () => {
+      this.setState({ playerSequence: temp, }, () => {
         if (this.state.playerSequence.length === this.state.round) {
-          this.setState({ playAvailable: false });
+          this.setState({ playAvailable: false, });
           this.compareSequence();
         }
       });
@@ -108,7 +108,7 @@ class App extends Component {
   }
 
   activateBoardButton = (color) => {
-    this.setState({ [`${color}Active`]: true }, () => setTimeout(() => {
+    this.setState({ [`${color}Active`]: true, }, () => setTimeout(() => {
       this.setState({ [`${color}Active`]: false, });
     }, 150));
   }
@@ -117,10 +117,6 @@ class App extends Component {
     const ref = {
       0: 'green', 1: 'red', 2: 'yellow', 3: 'blue',
     };
-    const newRound = this.state.round + 1;
-    this.setState({
-      round: newRound,
-    });
     this.state.computerSequence.forEach((val, index) => {
       const color = ref[val];
       const delay = this.state.speedMode * (index + 1);
@@ -129,13 +125,10 @@ class App extends Component {
       }, delay);
     });
     setTimeout(() => {
+      this.setState({ resetDisabled: true, });
       this.playerTurn();
     }, (this.state.computerSequence.length + 1) * this.state.speedMode);
   }
-
-  // computerTurn = () => {
-
-  // }
 
   playerTurn = () => {
     this.setState({ playAvailable: true, });
@@ -148,11 +141,13 @@ class App extends Component {
         correct = false;
       }
     });
-    this.setState({ playerSequence: [] }, () => {
+    this.setState({ playerSequence: [], }, () => {
       if (correct && this.state.round < 20) {
-        this.addToSequence();
+        const newRound = this.state.round + 1;
+        this.setState({ round: newRound, }, () => this.addToSequence());
       } else if (!correct && !this.state.strictMode) {
-        this.replayRound();
+        console.log('you must replay');
+        this.executeComputerSequence();
       } else if (!correct && this.state.strictMode) {
         this.loseGame();
       } else {
@@ -161,16 +156,12 @@ class App extends Component {
     });
   }
 
-  replayRound = () => {
-
-  }
-
   loseGame = () => {
-
+    console.log('you lose');
   }
 
   winGame = () => {
-
+    console.log('you win');
   }
 
   render() {
