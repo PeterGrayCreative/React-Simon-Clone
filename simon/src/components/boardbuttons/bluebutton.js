@@ -19,8 +19,7 @@ class BlueButton extends Component {
   render() {
     return (
       <StyledDiv onClick={this.props.handleBoardClick(this.props.color)}
-        className={this.props.blueActive ? 'bluebutton--active' : null}
-        className={this.props.playAvailable ? null : 'boardbuttons--inactive'}>
+        className={this.props.blueActive ? 'bluebutton--active' : null}>
       </StyledDiv>
     );
   }

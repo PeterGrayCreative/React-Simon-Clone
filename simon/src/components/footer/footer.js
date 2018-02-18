@@ -3,14 +3,12 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   letter-spacing: 1px;
-  
   p {
     color: #000000 ;
     width: 500px;
     margin: 10px auto;
     line-height: 125%
   }
-
   a {
     text-decoration: none;
     color: #060b9b;

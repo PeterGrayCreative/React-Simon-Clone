@@ -12,6 +12,7 @@ const StyledDiv = styled.div`
   margin: 20px auto;
   padding: 15px;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
