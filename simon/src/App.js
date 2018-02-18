@@ -25,26 +25,23 @@ const AppStyledDiv = styled.div`
 `;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      round: 1,
-      computerSequence: [],
-      playerSequence: [],
-      playAvailable: false,
-      speedMode: 700,
-      strictMode: false,
-      startDisabled: false,
-      speedDisabled: false,
-      strictDisabled: false,
-      resetDisabled: true,
-      greenActive: false,
-      redActive: false,
-      yellowActive: false,
-      blueActive: false,
-      bannerText: 'Ready To Play!',
-    };
-  }
+  state = {
+    round: 1,
+    computerSequence: [],
+    playerSequence: [],
+    playAvailable: false,
+    speedMode: 700,
+    strictMode: false,
+    startDisabled: false,
+    speedDisabled: false,
+    strictDisabled: false,
+    resetDisabled: true,
+    greenActive: false,
+    redActive: false,
+    yellowActive: false,
+    blueActive: false,
+    bannerText: 'Ready To Play!',
+  };
 
   addToSequence = () => {
     const temp = this.state.computerSequence;
