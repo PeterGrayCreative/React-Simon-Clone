@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import './boardbuttons.css';
 
 const StyledDiv = styled.div`
     display: inline-block;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 150px;
     margin-top: 18px;
     margin-left: 2px;    
     padding-bottom: 150px;
-    /* background-color: #cc0606; */
+    background-color: #cc0606;
     border-radius: 0 100% 0 0;
     &:hover {
       cursor: pointer;
     }
-    /* &:active {
-      box-shadow: inset -6px 6px 10px #2a2a2a;
-      background-color: #ed8782;
-    } */
 `;
 
 class RedButton extends Component {
@@ -23,11 +21,7 @@ class RedButton extends Component {
     return (
       <StyledDiv
         onClick={this.props.handleBoardClick(this.props.color)}
-        style={ {
-          backgroundColor: (this.props.redActive) ? '#ed8782' : '#cc0606',
-          boxShadow: (this.props.redActive) ? 'inset -6px 6px 10px #2a2a2a' : 'none',
-          WebkitTapHighlightColor: (this.props.redActive) ? 'rgba(0, 0, 0, 0)' : 'none',
-        } }>
+        className={this.props.redActive ? 'redbutton--active' : null}>
       </StyledDiv>
     );
   }

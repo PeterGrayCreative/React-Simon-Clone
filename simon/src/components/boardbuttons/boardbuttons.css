@@ -1,0 +1,19 @@
+.bluebutton--active {
+  box-shadow: inset -6px -6px 10px #2a2a2a;
+  background-color: #89c9ff;
+}
+
+.greenbutton--active {
+  box-shadow: inset 6px 6px 10px #2a2a2a;
+  background-color: #89ff94;
+}
+
+.redbutton--active {
+  box-shadow: inset -6px 6px 10px #2a2a2a;
+  background-color: #ed8782;
+}
+
+.yellowbutton--active {
+  box-shadow: inset 6px -6px 10px #2a2a2a;
+  background-color: #fbff89;
+}

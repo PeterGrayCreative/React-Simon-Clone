@@ -190,6 +190,7 @@ class App extends Component {
           redActive={this.state.redActive}
           yellowActive={this.state.yellowActive}
           blueActive={this.state.blueActive}
+          playAvailable={this.state.playAvailable}
         />
         <StatusBoard
           handleStart={this.handleStart}

@@ -23,22 +23,25 @@ class GameBoard extends Component {
           color='green'
           handleBoardClick={this.props.handleBoardClick}
           greenActive={this.props.greenActive}
-          webkit
+          playAvailable={this.props.playAvailable}
         />
         <RedButton
           color='red'
           handleBoardClick={this.props.handleBoardClick}
           redActive={this.props.redActive}
+          playAvailable={this.props.playAvailable}
         />
         <YellowButton
           color='yellow'
           handleBoardClick={this.props.handleBoardClick}
           yellowActive={this.props.yellowActive}
+          playAvailable={this.props.playAvailable}
         />
         <BlueButton
           color='blue'
           handleBoardClick={this.props.handleBoardClick}
           blueActive={this.props.blueActive}
+          playAvailable={this.props.playAvailable}
         />
       </StyledDiv>
     );
