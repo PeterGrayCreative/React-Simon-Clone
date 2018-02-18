@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const StyledDiv = styled.div`
-  
+const HeaderStyledDiv = styled.div`
   h1 {
-    font-family: Roboto, sans-serif;
-    font-size: 50px;
     margin-top: 10px;
     background-color: #25292e;
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
+    font-family: Roboto, sans-serif;
+    font-size: 50px;
     color: transparent;
     text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
   }
@@ -18,9 +17,9 @@ const StyledDiv = styled.div`
 class Header extends Component {
   render() {
     return (
-      <StyledDiv>
+      <HeaderStyledDiv>
         <h1>Simon 2.0.1</h1>
-      </StyledDiv>
+      </HeaderStyledDiv>
     );
   }
 }

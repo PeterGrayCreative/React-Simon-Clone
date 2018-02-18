@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import './boardbuttons.css';
 
-const StyledDiv = styled.div`
+const YellowStyledDiv = styled.div`
     display: inline-block;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 150px;
@@ -18,10 +18,10 @@ const StyledDiv = styled.div`
 class YellowButton extends Component {
   render() {
     return (
-      <StyledDiv
+      <YellowStyledDiv
         onClick={this.props.handleBoardClick(this.props.color)}
         className={this.props.yellowActive ? 'yellowbutton--active' : null}>
-      </StyledDiv>
+      </YellowStyledDiv>
     );
   }
 }

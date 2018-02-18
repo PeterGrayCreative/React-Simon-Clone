@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const StyledDiv = styled.div`
+const StatusStyledDiv = styled.div`
   margin-top: 15px;
   letter-spacing: 1px;
   h1 {
@@ -46,7 +46,7 @@ const StyledDiv = styled.div`
 class StatusBoard extends Component {
   render() {
     return (
-      <StyledDiv>
+      <StatusStyledDiv>
         <h1>{this.props.bannerText}</h1>
         <h2>Round: <span>{this.props.round}</span>&nbsp;&nbsp;</h2>
         <h2>Speed: <span>{(this.props.speed === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
@@ -90,7 +90,7 @@ class StatusBoard extends Component {
             RESET
           </button>
         </div>
-      </StyledDiv>
+      </StatusStyledDiv>
     );
   }
 }

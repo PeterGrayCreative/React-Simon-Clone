@@ -5,7 +5,7 @@ import GameBoard from './components/gameboard/gameboard';
 import StatusBoard from './components/statusboard/statusboard';
 import Footer from './components/footer/footer';
 
-const StyledDiv = styled.div`
+const AppStyledDiv = styled.div`
   max-width: 1100px;
   min-width: 600px;
   min-height: 600px;
@@ -31,13 +31,13 @@ class App extends Component {
       round: 1,
       computerSequence: [],
       playerSequence: [],
-      strictMode: false,
+      playAvailable: false,
       speedMode: 700,
+      strictMode: false,
       startDisabled: false,
       speedDisabled: false,
       strictDisabled: false,
       resetDisabled: true,
-      playAvailable: false,
       greenActive: false,
       redActive: false,
       yellowActive: false,
@@ -92,28 +92,14 @@ class App extends Component {
     });
   }
 
-
-  handleBoardClick = color => (event) => {
-    event.preventDefault();
-    const ref = {
-      green: 0, red: 1, yellow: 2, blue: 3,
-    };
-    if (this.state.playAvailable) {
-      this.activateBoardButton(color);
-      const temp = [...this.state.playerSequence, ref[color]];
-      this.setState({ playerSequence: temp, }, () => {
-        if (this.state.playerSequence.length === this.state.round) {
-          this.setState({ playAvailable: false, });
-          this.compareSequence();
-        }
-      });
-    }
-  }
-
   activateBoardButton = (color) => {
     this.setState({ [`${color}Active`]: true, }, () => setTimeout(() => {
       this.setState({ [`${color}Active`]: false, });
     }, 150));
+  }
+
+  playerTurn = () => {
+    this.setState({ playAvailable: true, });
   }
 
   executeComputerSequence = () => {
@@ -132,31 +118,6 @@ class App extends Component {
       this.setState({ resetDisabled: false, });
       this.playerTurn();
     }, (this.state.computerSequence.length + 1) * this.state.speedMode);
-  }
-
-  playerTurn = () => {
-    this.setState({ playAvailable: true, });
-  }
-
-  compareSequence = () => {
-    let correct = true;
-    this.state.playerSequence.forEach((val, index) => {
-      if (val !== this.state.computerSequence[index]) {
-        correct = false;
-      }
-    });
-    this.setState({ playerSequence: [], }, () => {
-      if (correct && this.state.round < 20) {
-        const newRound = this.state.round + 1;
-        this.setState({ round: newRound, }, () => this.addToSequence());
-      } else if (!correct && !this.state.strictMode) {
-        this.replaySequence();
-      } else if (!correct && this.state.strictMode) {
-        this.loseGame();
-      } else {
-        this.winGame();
-      }
-    });
   }
 
   replaySequence = () => {
@@ -181,9 +142,47 @@ class App extends Component {
     }, 3000);
   }
 
+  compareSequence = () => {
+    let correct = true;
+    this.state.playerSequence.forEach((val, index) => {
+      if (val !== this.state.computerSequence[index]) {
+        correct = false;
+      }
+    });
+    this.setState({ playerSequence: [], }, () => {
+      if (correct && this.state.round < 20) {
+        const newRound = this.state.round + 1;
+        this.setState({ round: newRound, }, () => this.addToSequence());
+      } else if (!correct && !this.state.strictMode) {
+        this.replaySequence();
+      } else if (!correct && this.state.strictMode) {
+        this.loseGame();
+      } else {
+        this.winGame();
+      }
+    });
+  }
+
+  handleBoardClick = color => (event) => {
+    event.preventDefault();
+    const ref = {
+      green: 0, red: 1, yellow: 2, blue: 3,
+    };
+    if (this.state.playAvailable) {
+      this.activateBoardButton(color);
+      const temp = [...this.state.playerSequence, ref[color]];
+      this.setState({ playerSequence: temp, }, () => {
+        if (this.state.playerSequence.length === this.state.round) {
+          this.setState({ playAvailable: false, });
+          this.compareSequence();
+        }
+      });
+    }
+  }
+
   render() {
     return (
-      <StyledDiv>
+      <AppStyledDiv>
         <Header />
         <GameBoard
           handleBoardClick={this.handleBoardClick}
@@ -208,7 +207,7 @@ class App extends Component {
           bannerText={this.state.bannerText}
         />
         <Footer />
-      </StyledDiv>
+      </AppStyledDiv>
     );
   }
 }

@@ -5,7 +5,7 @@ import RedButton from '../boardbuttons/redbutton';
 import YellowButton from '../boardbuttons/yellowbutton';
 import BlueButton from '../boardbuttons/bluebutton';
 
-const StyledDiv = styled.div`
+const BoardStyledDiv = styled.div`
   width: 342px;
   height: 342px;
   margin: 20px auto;
@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
 class GameBoard extends Component {
   render() {
     return (
-      <StyledDiv>
+      <BoardStyledDiv>
         <GreenButton
           color='green'
           handleBoardClick={this.props.handleBoardClick}
@@ -43,7 +43,7 @@ class GameBoard extends Component {
           blueActive={this.props.blueActive}
           playAvailable={this.props.playAvailable}
         />
-      </StyledDiv>
+      </BoardStyledDiv>
     );
   }
 }
