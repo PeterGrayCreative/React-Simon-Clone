@@ -24,7 +24,7 @@ const AppStyledDiv = styled.div`
   color: #25292e;
 `;
 
-const App = props => (
+const App = props => ( // renders main components of app passing approptiate props
   <AppStyledDiv>
     <Header />
     <GameBoard

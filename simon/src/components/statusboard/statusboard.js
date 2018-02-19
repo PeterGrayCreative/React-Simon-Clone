@@ -13,7 +13,7 @@ const StatusStyledDiv = styled.div`
     display: inline-block;
   }
   span {
-    color: #cc0606;
+    color: #cc0606; /* handles red text of dynamic status output in app */
   }
   .status-board__buttons {
     margin-top: 15px;
@@ -22,22 +22,23 @@ const StatusStyledDiv = styled.div`
 
 const StatusBoard = props => (
   <StatusStyledDiv>
-    <h1>{props.bannerText}</h1>
-    <h2>Round: <span>{props.round}</span>&nbsp;&nbsp;</h2>
-    <h2>Speed: <span>{(props.speedMode === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
-    <h2>Strict Mode: <span>{(props.strictMode) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
+    <h1>{props.bannerText}</h1> {/* dynamic banner/status text based on state */}
+    <h2>Round: <span>{props.round}</span>&nbsp;&nbsp;</h2> {/* Displays round number */}
+    <h2>Speed: <span>{(props.speedMode === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2> {/* Displays speed fast/slow */}
+    <h2>Strict Mode: <span>{(props.strictMode) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2> {/* Displays strict mode on/off */}
 
     <div className='status-board__buttons'>
-      <StatusBoardButton
-        clickAction={props.handleStart}
+      <StatusBoardButton // START button
+        clickAction={props.handleStart} // invokes method held in logic container on click
         disabledStatus={props.startDisabled}
-        style={ {
+        style={ { // passes prop/style object that changes background color and text color to grays when disabled
+          // ternary based on startDisabled state
           backgroundColor: props.startDisabled ? '#cccccc' : '#fffafa',
           color: props.startDisabled ? '#808080' : '#25292e',
         } }
         buttonTitle='START'>
       </StatusBoardButton>
-      <StatusBoardButton
+      <StatusBoardButton // SPEED mode BUTTON
         clickAction={props.handleSpeed}
         disabledStatus={props.speedDisabled}
         style={ {
@@ -46,7 +47,7 @@ const StatusBoard = props => (
         } }
         buttonTitle='SPEED'>
       </StatusBoardButton>
-      <StatusBoardButton
+      <StatusBoardButton // STRICT mode button
         clickAction={props.handleStrict}
         disabledStatus={props.strictDisabled}
         style={ {
@@ -55,7 +56,7 @@ const StatusBoard = props => (
         } }
         buttonTitle='STRICT'>
       </StatusBoardButton>
-      <StatusBoardButton
+      <StatusBoardButton // RESET button
         clickAction={props.handleReset}
         disabledStatus={props.resetDisabled}
         style={ {

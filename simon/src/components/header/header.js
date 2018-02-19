@@ -5,7 +5,7 @@ const HeaderStyledDiv = styled.div`
   h1 {
     margin-top: 10px;
     background-color: #25292e;
-    background-clip: text;
+    background-clip: text; /* "stamped" look of header */
     -webkit-background-clip: text;
     font-family: Roboto, sans-serif;
     font-size: 50px;
@@ -14,7 +14,7 @@ const HeaderStyledDiv = styled.div`
   }
 `;
 
-const Header = () => (
+const Header = () => ( // renders static header
   <HeaderStyledDiv>
     <h1>Simon 2.0.1</h1>
   </HeaderStyledDiv>

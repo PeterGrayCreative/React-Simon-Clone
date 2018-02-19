@@ -8,9 +8,6 @@ const FooterStyledDiv = styled.div`
     margin: 10px auto;
     line-height: 125%;
     color: #000000 ;
-    /* @media (max-width: 600px) {
-      width: 250px;
-    } */
   }
   a {
     text-decoration: none;
@@ -18,7 +15,7 @@ const FooterStyledDiv = styled.div`
   }
 `;
 
-const Footer = () => (
+const Footer = () => ( // renders static footer
   <FooterStyledDiv>
     <p>Design &amp; Development by Jonathan M. Brunt 2018</p>
     <p>Educational Project Inspired by the Original "Simon", a Registered Trademark of Milton Bradley</p>

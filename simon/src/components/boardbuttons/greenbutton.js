@@ -16,10 +16,10 @@ const GreenStyledDiv = styled.div`
   }
 `;
 
-const GreenButton = props => (
+const GreenButton = props => ( // renders green button
   <GreenStyledDiv
-    onClick={props.handleBoardClick(props.color)}
-    className={props.greenActive ? 'greenbutton--active' : null}>
+    onClick={props.handleBoardClick(props.color)} // invokes method held in logic container on click
+    className={props.greenActive ? 'greenbutton--active' : null}> {/* dynamically handles class based on state */}
   </GreenStyledDiv>
 );
 

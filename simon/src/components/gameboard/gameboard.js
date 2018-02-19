@@ -15,28 +15,28 @@ const BoardStyledDiv = styled.div`
   -webkit-box-shadow: 3px 3px 5px #2a2a2a, inset -2px -2px 2px #696969, inset 2px 2px 2px #696969;
 `;
 
-const GameBoard = props => (
+const GameBoard = props => ( // renders game board
   <BoardStyledDiv>
-    <GreenButton
-      color='green'
-      handleBoardClick={props.handleBoardClick}
-      greenActive={props.greenActive}
-      playAvailable={props.playAvailable}
+    <GreenButton // green play button
+      color='green' // passes color as prop
+      handleBoardClick={props.handleBoardClick} // passes method as prop
+      greenActive={props.greenActive} // passes active status as prop
+      playAvailable={props.playAvailable} // passes button availability as prop
     />
     <RedButton
-      color='red'
+      color='red' // red play button
       handleBoardClick={props.handleBoardClick}
       redActive={props.redActive}
       playAvailable={props.playAvailable}
     />
     <YellowButton
-      color='yellow'
+      color='yellow' // yellow play button
       handleBoardClick={props.handleBoardClick}
       yellowActive={props.yellowActive}
       playAvailable={props.playAvailable}
     />
     <BlueButton
-      color='blue'
+      color='blue' // blue play button
       handleBoardClick={props.handleBoardClick}
       blueActive={props.blueActive}
       playAvailable={props.playAvailable}

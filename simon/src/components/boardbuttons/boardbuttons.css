@@ -1,7 +1,8 @@
+/* Sheet handles dynamic class change in JSX via ternary for button "flash" and shadow */
 .bluebutton--active {
   box-shadow: inset -6px -6px 10px #2a2a2a;
   -webkit-box-shadow: inset -6px -6px 10px #2a2a2a;
-  background-color: #89c9ff !important;
+  background-color: #89c9ff !important; /* used to override styled-component...no cascade danger...same below */
 }
 
 .greenbutton--active {

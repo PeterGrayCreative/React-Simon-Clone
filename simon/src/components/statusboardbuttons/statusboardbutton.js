@@ -32,13 +32,13 @@ const ButtonStyledDiv = styled.div`
 }
 `;
 
-const StatusBoardButton = props => (
+const StatusBoardButton = props => ( // renders individual buttons
   <ButtonStyledDiv>
     <button
-      onClick={() => props.clickAction()}
-      disabled={props.disabledStatus}
-      style={ props.style }>
-      {props.buttonTitle}
+      onClick={() => props.clickAction()} // assigns method to handle click
+      disabled={props.disabledStatus} // disabled attribute status of button
+      style={ props.style }> {/* style based on passed object */}
+      {props.buttonTitle /* button title text */}
     </button>
   </ButtonStyledDiv>
 );
