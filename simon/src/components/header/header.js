@@ -8,7 +8,7 @@ const HeaderStyledDiv = styled.div`
     background-clip: text; /* "stamped" look of header */
     -webkit-background-clip: text;
     font-family: Roboto, sans-serif;
-    font-size: 50px;
+    font-size: 5em;
     color: transparent;
     text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
   }

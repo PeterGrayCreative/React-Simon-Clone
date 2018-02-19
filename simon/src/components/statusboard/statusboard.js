@@ -3,14 +3,16 @@ import styled from 'styled-components';
 import StatusBoardButton from '../statusboardbuttons/statusboardbutton';
 
 const StatusStyledDiv = styled.div`
-  margin-top: 15px;
+  margin-top: 16px;
   letter-spacing: 1px;
   h1 {
     margin-bottom: 10px;
+    font-size: 3.25em;
   }
   h2 {
     margin: 5px 0;
     display: inline-block;
+    font-size: 2.4em;
   }
   span {
     color: #cc0606; /* handles red text of dynamic status output in app */

@@ -7,6 +7,7 @@ const BlueStyledDiv = styled.div`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 150px;
     margin-left: 2px;
+    margin-top: 2px;
     padding-bottom: 150px;
     background-color: #060b9b;
     border-radius: 0 0 100% 0;

@@ -7,6 +7,7 @@ const FooterStyledDiv = styled.div`
     width: 500px;
     margin: 10px auto;
     line-height: 125%;
+    font-size: 1.6em;
     color: #000000 ;
   }
   a {

@@ -6,7 +6,8 @@ const YellowStyledDiv = styled.div`
     display: inline-block;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 150px;
-    margin-right: 2px;   
+    margin-right: 2px;
+    margin-top: 2px;
     padding-bottom: 150px;
     background-color: #cccc06;
     border-radius: 0 0 0 100%;
