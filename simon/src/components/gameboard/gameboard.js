@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import GreenButton from '../boardbuttons/greenbutton';
 import RedButton from '../boardbuttons/redbutton';

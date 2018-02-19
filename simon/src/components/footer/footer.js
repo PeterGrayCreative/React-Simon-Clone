@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const FooterStyledDiv = styled.div`
@@ -8,6 +8,9 @@ const FooterStyledDiv = styled.div`
     margin: 10px auto;
     line-height: 125%;
     color: #000000 ;
+    /* @media (max-width: 600px) {
+      width: 250px;
+    } */
   }
   a {
     text-decoration: none;
