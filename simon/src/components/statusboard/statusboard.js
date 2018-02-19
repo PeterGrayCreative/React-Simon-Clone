@@ -24,8 +24,8 @@ const StatusBoard = props => (
   <StatusStyledDiv>
     <h1>{props.bannerText}</h1>
     <h2>Round: <span>{props.round}</span>&nbsp;&nbsp;</h2>
-    <h2>Speed: <span>{(props.speed === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
-    <h2>Strict Mode: <span>{(props.strict) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
+    <h2>Speed: <span>{(props.speedMode === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
+    <h2>Strict Mode: <span>{(props.strictMode) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
 
     <div className='status-board__buttons'>
       <StatusBoardButton
