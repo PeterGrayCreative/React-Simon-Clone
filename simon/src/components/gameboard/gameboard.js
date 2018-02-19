@@ -15,37 +15,33 @@ const BoardStyledDiv = styled.div`
   -webkit-box-shadow: 3px 3px 5px #2a2a2a, inset -2px -2px 2px #696969, inset 2px 2px 2px #696969;
 `;
 
-class GameBoard extends Component {
-  render() {
-    return (
-      <BoardStyledDiv>
-        <GreenButton
-          color='green'
-          handleBoardClick={this.props.handleBoardClick}
-          greenActive={this.props.greenActive}
-          playAvailable={this.props.playAvailable}
-        />
-        <RedButton
-          color='red'
-          handleBoardClick={this.props.handleBoardClick}
-          redActive={this.props.redActive}
-          playAvailable={this.props.playAvailable}
-        />
-        <YellowButton
-          color='yellow'
-          handleBoardClick={this.props.handleBoardClick}
-          yellowActive={this.props.yellowActive}
-          playAvailable={this.props.playAvailable}
-        />
-        <BlueButton
-          color='blue'
-          handleBoardClick={this.props.handleBoardClick}
-          blueActive={this.props.blueActive}
-          playAvailable={this.props.playAvailable}
-        />
-      </BoardStyledDiv>
-    );
-  }
-}
+const GameBoard = props => (
+  <BoardStyledDiv>
+    <GreenButton
+      color='green'
+      handleBoardClick={props.handleBoardClick}
+      greenActive={props.greenActive}
+      playAvailable={props.playAvailable}
+    />
+    <RedButton
+      color='red'
+      handleBoardClick={props.handleBoardClick}
+      redActive={props.redActive}
+      playAvailable={props.playAvailable}
+    />
+    <YellowButton
+      color='yellow'
+      handleBoardClick={props.handleBoardClick}
+      yellowActive={props.yellowActive}
+      playAvailable={props.playAvailable}
+    />
+    <BlueButton
+      color='blue'
+      handleBoardClick={props.handleBoardClick}
+      blueActive={props.blueActive}
+      playAvailable={props.playAvailable}
+    />
+  </BoardStyledDiv>
+);
 
 export default GameBoard;

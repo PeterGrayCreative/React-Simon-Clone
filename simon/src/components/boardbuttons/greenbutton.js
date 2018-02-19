@@ -16,15 +16,11 @@ const GreenStyledDiv = styled.div`
   }
 `;
 
-class GreenButton extends Component {
-  render() {
-    return (
-      <GreenStyledDiv
-        onClick={this.props.handleBoardClick(this.props.color)}
-        className={this.props.greenActive ? 'greenbutton--active' : null}>
-      </GreenStyledDiv>
-    );
-  }
-}
+const GreenButton = props => (
+  <GreenStyledDiv
+    onClick={props.handleBoardClick(props.color)}
+    className={props.greenActive ? 'greenbutton--active' : null}>
+  </GreenStyledDiv>
+);
 
 export default GreenButton;

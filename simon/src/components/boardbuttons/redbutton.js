@@ -16,15 +16,11 @@ const RedStyledDiv = styled.div`
   }
 `;
 
-class RedButton extends Component {
-  render() {
-    return (
-      <RedStyledDiv
-        onClick={this.props.handleBoardClick(this.props.color)}
-        className={this.props.redActive ? 'redbutton--active' : null}>
-      </RedStyledDiv>
-    );
-  }
-}
+const RedButton = props => (
+  <RedStyledDiv
+    onClick={props.handleBoardClick(props.color)}
+    className={props.redActive ? 'redbutton--active' : null}>
+  </RedStyledDiv>
+);
 
 export default RedButton;

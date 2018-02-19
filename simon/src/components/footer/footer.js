@@ -14,16 +14,13 @@ const FooterStyledDiv = styled.div`
     color: #060b9b;
   }
 `;
-class Footer extends Component {
-  render() {
-    return (
-      <FooterStyledDiv>
-        <p>Design &amp; Development by Jonathan M. Brunt 2018</p>
-        <p>Educational Project Inspired by the Original "Simon", a Registered Trademark of Milton Bradley</p>
-        <p>Sound Effects Obtained From <a href='https://www.zapsplat.com' rel="noopener noreferrer" target='_blank'>https://www.zapsplat.com</a></p>
-      </FooterStyledDiv>
-    );
-  }
-}
+
+const Footer = () => (
+  <FooterStyledDiv>
+    <p>Design &amp; Development by Jonathan M. Brunt 2018</p>
+    <p>Educational Project Inspired by the Original "Simon", a Registered Trademark of Milton Bradley</p>
+    <p>Sound Effects Obtained From <a href='https://www.zapsplat.com' rel="noopener noreferrer" target='_blank'>https://www.zapsplat.com</a></p>
+  </FooterStyledDiv>
+);
 
 export default Footer;

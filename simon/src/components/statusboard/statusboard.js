@@ -40,59 +40,58 @@ const StatusStyledDiv = styled.div`
       -webkit-box-shadow: none;
       border: none;
     }
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 `;
 
-class StatusBoard extends Component {
-  render() {
-    return (
-      <StatusStyledDiv>
-        <h1>{this.props.bannerText}</h1>
-        <h2>Round: <span>{this.props.round}</span>&nbsp;&nbsp;</h2>
-        <h2>Speed: <span>{(this.props.speed === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
-        <h2>Strict Mode: <span>{(this.props.strict) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
+const StatusBoard = props => (
+  <StatusStyledDiv>
+    <h1>{props.bannerText}</h1>
+    <h2>Round: <span>{props.round}</span>&nbsp;&nbsp;</h2>
+    <h2>Speed: <span>{(props.speed === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2>
+    <h2>Strict Mode: <span>{(props.strict) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
 
-        <div className='status-board__buttons'>
-          <button
-            onClick={() => this.props.handleStart()}
-            disabled={this.props.startDisabled}
-            style={ {
-              backgroundColor: this.props.startDisabled ? '#cccccc' : '#fffafa',
-              color: this.props.startDisabled ? '#808080' : '#25292e',
-            } }>
-            START
-          </button>
-          <button
-            onClick={() => this.props.handleSpeed()}
-            disabled={this.props.speedDisabled}
-            style={ {
-              backgroundColor: this.props.speedDisabled ? '#cccccc' : '#fffafa',
-              color: this.props.speedDisabled ? '#808080' : '#25292e',
-            } }>
-            SPEED
-          </button>
-          <button
-            onClick={() => this.props.handleStrict()}
-            disabled={this.props.strictDisabled}
-            style={ {
-              backgroundColor: this.props.strictDisabled ? '#cccccc' : '#fffafa',
-              color: this.props.strictDisabled ? '#808080' : '#25292e',
-            } }>
-            STRICT
-          </button>
-          <button
-            onClick={() => this.props.handleReset()}
-            disabled={this.props.resetDisabled}
-            style={ {
-              backgroundColor: this.props.resetDisabled ? '#cccccc' : '#fffafa',
-              color: this.props.resetDisabled ? '#808080' : '#25292e',
-            } }>
-            RESET
-          </button>
-        </div>
-      </StatusStyledDiv>
-    );
-  }
-}
+    <div className='status-board__buttons'>
+      <button
+        onClick={() => props.handleStart()}
+        disabled={props.startDisabled}
+        style={ {
+          backgroundColor: props.startDisabled ? '#cccccc' : '#fffafa',
+          color: props.startDisabled ? '#808080' : '#25292e',
+        } }>
+        START
+      </button>
+      <button
+        onClick={() => props.handleSpeed()}
+        disabled={props.speedDisabled}
+        style={ {
+          backgroundColor: props.speedDisabled ? '#cccccc' : '#fffafa',
+          color: props.speedDisabled ? '#808080' : '#25292e',
+        } }>
+        SPEED
+      </button>
+      <button
+        onClick={() => props.handleStrict()}
+        disabled={props.strictDisabled}
+        style={ {
+          backgroundColor: props.strictDisabled ? '#cccccc' : '#fffafa',
+          color: props.strictDisabled ? '#808080' : '#25292e',
+        } }>
+        STRICT
+      </button>
+      <button
+        onClick={() => props.handleReset()}
+        disabled={props.resetDisabled}
+        style={ {
+          backgroundColor: props.resetDisabled ? '#cccccc' : '#fffafa',
+          color: props.resetDisabled ? '#808080' : '#25292e',
+        } }>
+        RESET
+      </button>
+    </div>
+  </StatusStyledDiv>
+);
 
 export default StatusBoard;

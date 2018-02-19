@@ -15,15 +15,11 @@ const YellowStyledDiv = styled.div`
     }
 `;
 
-class YellowButton extends Component {
-  render() {
-    return (
-      <YellowStyledDiv
-        onClick={this.props.handleBoardClick(this.props.color)}
-        className={this.props.yellowActive ? 'yellowbutton--active' : null}>
-      </YellowStyledDiv>
-    );
-  }
-}
+const YellowButton = props => (
+  <YellowStyledDiv
+    onClick={props.handleBoardClick(props.color)}
+    className={props.yellowActive ? 'yellowbutton--active' : null}>
+  </YellowStyledDiv>
+);
 
 export default YellowButton;

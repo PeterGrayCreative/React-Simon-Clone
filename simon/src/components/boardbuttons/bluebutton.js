@@ -15,14 +15,10 @@ const BlueStyledDiv = styled.div`
     }
 `;
 
-class BlueButton extends Component {
-  render() {
-    return (
-      <BlueStyledDiv onClick={this.props.handleBoardClick(this.props.color)}
-        className={this.props.blueActive ? 'bluebutton--active' : null}>
-      </BlueStyledDiv>
-    );
-  }
-}
+const BlueButton = props => (
+  <BlueStyledDiv onClick={props.handleBoardClick(props.color)}
+    className={props.blueActive ? 'bluebutton--active' : null}>
+  </BlueStyledDiv>
+);
 
 export default BlueButton;

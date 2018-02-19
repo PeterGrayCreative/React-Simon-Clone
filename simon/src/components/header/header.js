@@ -14,14 +14,10 @@ const HeaderStyledDiv = styled.div`
   }
 `;
 
-class Header extends Component {
-  render() {
-    return (
-      <HeaderStyledDiv>
-        <h1>Simon 2.0.1</h1>
-      </HeaderStyledDiv>
-    );
-  }
-}
+const Header = () => (
+  <HeaderStyledDiv>
+    <h1>Simon 2.0.1</h1>
+  </HeaderStyledDiv>
+);
 
 export default Header;
