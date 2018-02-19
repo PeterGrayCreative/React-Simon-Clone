@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Header from './components/header/header';
 import GameBoard from './components/gameboard/gameboard';
