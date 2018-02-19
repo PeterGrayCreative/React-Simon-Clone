@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import StatusBoardButton from '../statusboardbuttons/statusboardbutton';
 
 const StatusStyledDiv = styled.div`
   margin-top: 15px;
@@ -17,33 +18,6 @@ const StatusStyledDiv = styled.div`
   .status-board__buttons {
     margin-top: 15px;
   }
-  button {
-    width: 75px;
-    margin: 0 10px 20px;
-    padding: 10px 0 7px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-    background-color: #fffafa;
-    letter-spacing: 1px;   
-    font-family: Orbitron, sans-serif;
-    font-weight: 600;
-    color: #25292e;
-    &:hover {
-      cursor: pointer;
-    }
-    &:focus {
-      outline: 0;
-    }
-    &:active {
-      box-shadow: none;
-      -webkit-box-shadow: none;
-      border: none;
-    }
-    &:disabled {
-      cursor: not-allowed;
-    }
-  }
 `;
 
 const StatusBoard = props => (
@@ -54,42 +28,42 @@ const StatusBoard = props => (
     <h2>Strict Mode: <span>{(props.strict) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2>
 
     <div className='status-board__buttons'>
-      <button
-        onClick={() => props.handleStart()}
-        disabled={props.startDisabled}
+      <StatusBoardButton
+        clickAction={props.handleStart}
+        disabledStatus={props.startDisabled}
         style={ {
           backgroundColor: props.startDisabled ? '#cccccc' : '#fffafa',
           color: props.startDisabled ? '#808080' : '#25292e',
-        } }>
-        START
-      </button>
-      <button
-        onClick={() => props.handleSpeed()}
-        disabled={props.speedDisabled}
+        } }
+        buttonTitle='START'>
+      </StatusBoardButton>
+      <StatusBoardButton
+        clickAction={props.handleSpeed}
+        disabledStatus={props.speedDisabled}
         style={ {
           backgroundColor: props.speedDisabled ? '#cccccc' : '#fffafa',
           color: props.speedDisabled ? '#808080' : '#25292e',
-        } }>
-        SPEED
-      </button>
-      <button
-        onClick={() => props.handleStrict()}
-        disabled={props.strictDisabled}
+        } }
+        buttonTitle='SPEED'>
+      </StatusBoardButton>
+      <StatusBoardButton
+        clickAction={props.handleStrict}
+        disabledStatus={props.strictDisabled}
         style={ {
           backgroundColor: props.strictDisabled ? '#cccccc' : '#fffafa',
           color: props.strictDisabled ? '#808080' : '#25292e',
-        } }>
-        STRICT
-      </button>
-      <button
-        onClick={() => props.handleReset()}
-        disabled={props.resetDisabled}
+        } }
+        buttonTitle='STRICT'>
+      </StatusBoardButton>
+      <StatusBoardButton
+        clickAction={props.handleReset}
+        disabledStatus={props.resetDisabled}
         style={ {
           backgroundColor: props.resetDisabled ? '#cccccc' : '#fffafa',
           color: props.resetDisabled ? '#808080' : '#25292e',
-        } }>
-        RESET
-      </button>
+        } }
+        buttonTitle='RESET'>
+      </StatusBoardButton>
     </div>
   </StatusStyledDiv>
 );
