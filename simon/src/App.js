@@ -7,8 +7,7 @@ import Footer from './components/footer/footer';
 
 const AppStyledDiv = styled.div`
   max-width: 1100px;
-  min-width: 600px;
-  min-height: 600px;
+  min-width: 350px;
   margin: 20px auto;
   padding: 15px;
   box-sizing: border-box;

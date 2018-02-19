@@ -14,6 +14,11 @@ const RedStyledDiv = styled.div`
   &:hover {
     cursor: pointer;
   }
+  @media (max-width: 600px) { /* reduces size of game board */
+      width: 120px;
+      margin-top: 14px;
+      padding-bottom: 120px;
+    }
 `;
 
 const RedButton = props => ( // renders red button

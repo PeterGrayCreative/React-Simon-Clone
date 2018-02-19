@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import StatusBoardButton from '../statusboardbuttons/statusboardbutton';
 
 const StatusStyledDiv = styled.div`
-  margin-top: 16px;
+  max-width: 600px;
+  margin: 16px auto 0;;
   letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   h1 {
     margin-bottom: 10px;
     font-size: 3.25em;
@@ -17,7 +21,15 @@ const StatusStyledDiv = styled.div`
   span {
     color: #cc0606; /* handles red text of dynamic status output in app */
   }
+  .status-board__displays {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .status-board__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 15px;
   }
 `;
@@ -25,10 +37,11 @@ const StatusStyledDiv = styled.div`
 const StatusBoard = props => (
   <StatusStyledDiv>
     <h1>{props.bannerText}</h1> {/* dynamic banner/status text based on state */}
-    <h2>Round: <span>{props.round}</span>&nbsp;&nbsp;</h2> {/* Displays round number */}
-    <h2>Speed: <span>{(props.speedMode === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2> {/* Displays speed fast/slow */}
-    <h2>Strict Mode: <span>{(props.strictMode) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2> {/* Displays strict mode on/off */}
-
+    <div className='status-board__displays'>
+      <h2>Round: <span>{props.round}</span>&nbsp;&nbsp;</h2> {/* Displays round number */}
+      <h2>Speed: <span>{(props.speedMode === 700) ? 'Slow' : 'Fast'}</span>&nbsp;&nbsp;</h2> {/* Displays speed fast/slow */}
+      <h2>Strict Mode: <span>{(props.strictMode) ? 'On' : 'Off'}</span>&nbsp;&nbsp;</h2> {/* Displays strict mode on/off */}
+    </div>
     <div className='status-board__buttons'>
       <StatusBoardButton // START button
         clickAction={props.handleStart} // invokes method held in logic container on click

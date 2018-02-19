@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FooterStyledDiv = styled.div`
   letter-spacing: 1px;
   p {
-    width: 500px;
+    max-width: 500px;
     margin: 10px auto;
     line-height: 125%;
     font-size: 1.6em;

@@ -13,6 +13,10 @@ const BoardStyledDiv = styled.div`
   border-radius: 100%;
   box-shadow: 3px 3px 5px #2a2a2a, inset -2px -2px 2px #696969, inset 2px 2px 2px #696969;
   -webkit-box-shadow: 3px 3px 5px #2a2a2a, inset -2px -2px 2px #696969, inset 2px 2px 2px #696969;
+  @media (max-width: 600px) { /* reduces size of game board */
+    width: 274px;
+    height: 274px;
+  }
 `;
 
 const GameBoard = props => ( // renders game board

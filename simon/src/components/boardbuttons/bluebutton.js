@@ -14,6 +14,10 @@ const BlueStyledDiv = styled.div`
     &:hover {
       cursor: pointer;
     }
+    @media (max-width: 600px) { /* reduces size of game board */
+      width: 120px;
+      padding-bottom: 120px;
+    }
 `;
 
 const BlueButton = props => ( // renders green button
