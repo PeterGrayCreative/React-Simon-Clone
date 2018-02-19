@@ -7,7 +7,7 @@ class LogicContainer extends Component {
     computerSequence: [],
     playerSequence: [],
     playAvailable: false,
-    speedMode: 700,
+    speedMode: 400,
     strictMode: false,
     startDisabled: false,
     speedDisabled: false,
