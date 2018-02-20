@@ -4,6 +4,7 @@ import GreenButton from '../boardbuttons/greenbutton';
 import RedButton from '../boardbuttons/redbutton';
 import YellowButton from '../boardbuttons/yellowbutton';
 import BlueButton from '../boardbuttons/bluebutton';
+import GameBoardCenter from './gameboardcenter';
 
 const BoardStyledDiv = styled.div`
   /* position: relative; */
@@ -17,22 +18,6 @@ const BoardStyledDiv = styled.div`
   @media (max-width: 600px) { /* reduces size of game board */
     width: 274px;
     height: 274px;
-  }
-  .gameboard__center {
-    position: relative;
-    bottom: 242px;
-    left: 85px;
-    height: 175px;
-    width: 175px;
-    border-radius: 100%;
-    background-color: #2a2a2a;
-    @media (max-width: 600px) {
-      bottom: 196px;
-      left: 68px;
-      height: 140px;
-      width: 140px;      
-    }
-    
   }
 `;
 
@@ -62,8 +47,7 @@ const GameBoard = props => ( // renders game board
       blueActive={props.blueActive}
       playAvailable={props.playAvailable}
     />
-    <div className='gameboard__center'>
-    </div>
+    <GameBoardCenter /> {/* solid center component */}
   </BoardStyledDiv>
 );
 

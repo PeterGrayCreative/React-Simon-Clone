@@ -4,3 +4,9 @@ body {
   background-color: #25292e; /* sets contrasting background for large screens */
   font-size: 10px; /* set to manage use of em */
 }
+
+@media (max-width: 600px) {
+  body {
+    background-color: #808080;
+  }
+}
