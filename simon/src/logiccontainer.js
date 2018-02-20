@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import App from './App';
+import simon1 from './sounds/simon1.mp3';
+import simon2 from './sounds/simon2.mp3';
+import simon3 from './sounds/simon3.mp3';
+import simon4 from './sounds/simon4.mp3';
+import win from './sounds/win.mp3';
+import wrong from './sounds/wrong.mp3';
 
 class LogicContainer extends Component {
   state = {
@@ -35,6 +41,7 @@ class LogicContainer extends Component {
       resetDisabled: false, // enables reset button
       bannerText: 'Playing...',
     });
+    console.log(simon1);
     this.addToSequence(); // invokes for initial play sequence of game
   }
 
