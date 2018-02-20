@@ -24,33 +24,41 @@ const AppStyledDiv = styled.div`
   @media (max-width: 600px) {
     margin: 0;
   }
+  .app__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 `;
 
 const App = props => ( // renders main components of app passing approptiate props
   <AppStyledDiv>
     <Header />
-    <GameBoard
-      handleBoardClick={props.handleBoardClick}
-      greenActive={props.greenActive}
-      redActive={props.redActive}
-      yellowActive={props.yellowActive}
-      blueActive={props.blueActive}
-      playAvailable={props.playAvailable}
-    />
-    <StatusBoard
-      handleStart={props.handleStart}
-      handleSpeed={props.handleSpeed}
-      handleStrict={props.handleStrict}
-      handleReset={props.handleReset}
-      startDisabled={props.startDisabled}
-      speedDisabled={props.speedDisabled}
-      strictDisabled={props.strictDisabled}
-      resetDisabled={props.resetDisabled}
-      speedMode={props.speedMode}
-      strictMode={props.strictMode}
-      round={props.round}
-      bannerText={props.bannerText}
-    />
+    <div className='app__container'>
+      <GameBoard
+        handleBoardClick={props.handleBoardClick}
+        greenActive={props.greenActive}
+        redActive={props.redActive}
+        yellowActive={props.yellowActive}
+        blueActive={props.blueActive}
+        playAvailable={props.playAvailable}
+      />
+      <StatusBoard
+        handleStart={props.handleStart}
+        handleSpeed={props.handleSpeed}
+        handleStrict={props.handleStrict}
+        handleReset={props.handleReset}
+        startDisabled={props.startDisabled}
+        speedDisabled={props.speedDisabled}
+        strictDisabled={props.strictDisabled}
+        resetDisabled={props.resetDisabled}
+        speedMode={props.speedMode}
+        strictMode={props.strictMode}
+        round={props.round}
+        bannerText={props.bannerText}
+      />
+    </div>
     <Footer />
   </AppStyledDiv>
 );

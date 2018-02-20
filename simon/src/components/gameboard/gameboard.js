@@ -7,7 +7,6 @@ import BlueButton from '../boardbuttons/bluebutton';
 import GameBoardCenter from './gameboardcenter';
 
 const BoardStyledDiv = styled.div`
-  /* position: relative; */
   width: 342px;
   height: 342px;
   margin: 20px auto;
