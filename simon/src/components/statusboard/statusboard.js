@@ -3,12 +3,16 @@ import styled from 'styled-components';
 import StatusBoardButton from '../statusboardbuttons/statusboardbutton';
 
 const StatusStyledDiv = styled.div`
-  max-width: 600px;
+  max-width: 400px;
   margin: 16px auto 0;;
   letter-spacing: 1px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  /* allows widening of status bar when board and status are vertically stacked */
+  @media (max-width: 772px) { 
+    max-width: 600px;
+  }
   h1 {
     margin-bottom: 10px;
     font-size: 3.25em;
