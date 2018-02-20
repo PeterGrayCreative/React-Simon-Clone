@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import App from './App';
-import simon1 from './sounds/simon1.mp3';
-import simon2 from './sounds/simon2.mp3';
-import simon3 from './sounds/simon3.mp3';
-import simon4 from './sounds/simon4.mp3';
-import win from './sounds/win.mp3';
-import wrong from './sounds/wrong.mp3';
 
 class LogicContainer extends Component {
   state = {
@@ -41,7 +35,6 @@ class LogicContainer extends Component {
       resetDisabled: false, // enables reset button
       bannerText: 'Playing...',
     });
-    console.log(simon1);
     this.addToSequence(); // invokes for initial play sequence of game
   }
 
@@ -104,7 +97,7 @@ class LogicContainer extends Component {
   }
 
   replaySequence = () => { // allows replay of round outside strict mode
-    this.setState({ bannerText: 'Try The Sequence Again!' }); // message to player
+    this.setState({ bannerText: 'Try Again!' }); // message to player
     setTimeout(() => { // sets 1.2 second delay on replay of round
       this.setState({ bannerText: 'Playing...' }); // message to player
       this.executeComputerSequence(); // invokes to replay the sequence
@@ -112,7 +105,7 @@ class LogicContainer extends Component {
   }
 
   loseGame = () => { // handles player loss
-    this.setState({ bannerText: 'You Lose!! Try Again!!' }); // message to player
+    this.setState({ bannerText: 'You Lose!!' }); // message to player
     setTimeout(() => { // invokes reset after 3sec delay
       this.handleReset();
     }, 3000);
