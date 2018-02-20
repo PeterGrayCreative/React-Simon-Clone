@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './boardbuttons.css';
 
 const GreenStyledDiv = styled.div`
+  position: relative;
   display: inline-block;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   width: 150px;
