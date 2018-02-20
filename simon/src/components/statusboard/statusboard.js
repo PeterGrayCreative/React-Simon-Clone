@@ -12,11 +12,17 @@ const StatusStyledDiv = styled.div`
   h1 {
     margin-bottom: 10px;
     font-size: 3.25em;
+    @media (max-width: 600px) {
+      font-size: 2.6em;
+    }
   }
   h2 {
     margin: 5px 0;
     display: inline-block;
     font-size: 2.4em;
+    @media (max-width: 600px) {
+      font-size: 1.92em;
+    }
   }
   span {
     color: #cc0606; /* handles red text of dynamic status output in app */

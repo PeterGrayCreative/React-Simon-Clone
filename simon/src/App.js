@@ -21,6 +21,9 @@ const AppStyledDiv = styled.div`
   text-align: center;
   font-family: Orbitron, sans-serif;
   color: #25292e;
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 `;
 
 const App = props => ( // renders main components of app passing approptiate props

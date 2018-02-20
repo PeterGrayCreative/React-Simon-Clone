@@ -9,6 +9,9 @@ const FooterStyledDiv = styled.div`
     line-height: 125%;
     font-size: 1.6em;
     color: #000000 ;
+    @media (max-width: 600px) {
+      font-size: 1.2em;
+    }
   }
   a {
     text-decoration: none;

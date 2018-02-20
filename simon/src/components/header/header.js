@@ -11,6 +11,10 @@ const HeaderStyledDiv = styled.div`
     font-size: 5em;
     color: transparent;
     text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+    @media (max-width: 600px) {
+      margin-top: 0;
+      font-size: 4em;
+    }
   }
 `;
 
