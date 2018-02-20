@@ -128,7 +128,9 @@ class LogicContainer extends Component {
     this.setState({ playerSequence: [], }, () => { // resets player input array for next round
       if (correct && this.state.round < 20) { // if comparison correct and game under 20 rounds
         const newRound = this.state.round + 1; // temporary variable to increment round
-        this.setState({ round: newRound, }, () => this.addToSequence()); // invokes new round
+        this.setState({ round: newRound, }, () => setTimeout(() => {
+          this.addToSequence();
+        }, 500));
       } else if (!correct && !this.state.strictMode) { // if incorrect and strict mode off
         this.replaySequence(); // replay round
       } else if (!correct && this.state.strictMode) { // if incorrect and strict mode on
